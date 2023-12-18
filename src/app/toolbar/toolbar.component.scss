@@ -5,11 +5,14 @@
     position: fixed;
     height: 8vh;
     width: 100%;
-    background-color: black;
+    background-color: transparent;
     color: white;
+    padding-left: 4vw;
+    padding-right: 4vw;
 
-    .nav.scrolled{
-        background-color: transparent;
+   &.scrolled{
+        background-color: black;
+        transition: all 1s ease-in-out;
     }
 
     &_container{
@@ -50,11 +53,11 @@
     &_links{
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 3vw;
         font-family: 'DM Serif Text', serif;
         text-transform: uppercase;
         list-style: none;
-        font-size: calc(0.5rem + 0.5vw);
+        font-size: calc(0.5rem + 0.3vw);
         letter-spacing: 0.2rem;
         font-weight: 500;
         justify-content: space-evenly;

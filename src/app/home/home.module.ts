@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ShowcaseComponent
+    ShowcaseComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
