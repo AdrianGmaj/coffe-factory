@@ -6,7 +6,7 @@
 
   app-about-us{
     grid-column: container-start/container-end;
-    height: 100vh;
+    height: min-content;
     background-image: url("/assets/home/about-us/wave3.svg");
     background-repeat: no-repeat;
     background-position: center;

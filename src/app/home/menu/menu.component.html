@@ -4,17 +4,17 @@
     <p class="menu-content_para">
       Delight in our diverse menu, crafted to satisfy all cravings. </p>
 
-    <div class="menu-content_container">
+    <div class="menu-content_container container">
 
       <div *ngFor="let coffee of menu" class="card">
-        <!-- <div class="image-container"> -->
+ 
         <img src="{{coffee.img}}" alt="" class="menu__img">
-        <!-- </div> -->
+    
         <div class="card-text">
           <div class="card-heading">
-            <h4>{{coffee.title}}</h4>
+            <a class="header">{{coffee.title}}</a>
             <span></span>
-            <h4>{{coffee.price | currency}}</h4>
+            <a class="header">{{coffee.price | currency}}</a>
           </div>
        
           <p>{{coffee.label}}</p>
