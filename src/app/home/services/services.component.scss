@@ -1,0 +1,51 @@
+.services{
+    background-color: #f2efe6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:3vh;
+ 
+    &-title{
+        font-family: 'DM Serif Text', serif;
+        font-size: calc(1.5rem + 2vw);
+        text-align: center;
+        
+    }
+
+    &-content{
+        display: grid;
+        padding: 6vh 9vw;
+
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap:9vh calc(1rem + 1vw);
+      
+
+      
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:2vh;
+            &-img{
+                display: block;
+                width: 60px;
+                height: auto;
+                transition: all 1.5s ease-in-out;
+            }
+
+            &-para{
+                text-align: justify;
+                
+            }
+         
+        }
+
+        .card:hover .card-img{
+            transform: rotateY(360deg);
+        }
+
+
+    }
+}
