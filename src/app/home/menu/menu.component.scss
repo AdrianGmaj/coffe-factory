@@ -1,0 +1,99 @@
+.menu {
+    color: white;
+    // background-image: url(/assets/home/menu/background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#101311;
+    height: 100%;
+
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6vh 6vw;
+
+        h2 {
+            font-family: 'DM Serif Text', serif;
+            font-size: calc(1rem + 2vw);
+            color: #bd9c79;
+            padding: 2vh 2vw;
+        }
+
+        &_para {
+            padding: 5vh 5vw;
+            font-size: calc(0.3rem + 0.7vw);
+            margin-bottom: 2vh;
+        }
+
+        &_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            flex-wrap: wrap;
+            background-color:#101311;
+       
+            row-gap: 4rem;
+            padding-left: 10vh;
+            padding-right: 10vh;
+
+         
+
+            .card {
+                display: flex;
+                flex-direction: row;
+                width: 40%;
+                height: auto;
+                gap: 4vh;
+
+
+                .menu__img {
+                    width: 70px;
+                    height: 70px;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -o-object-position: center;
+                    object-position: center;
+                }
+
+                img {
+                    height: auto;
+                    max-width: 100%;
+                    display: block;
+                }
+
+                .card-text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1vh;
+                }
+
+                .card-heading {
+                    display: flex;
+                    flex-direction:row;
+                  justify-content: space-between;
+                  
+
+                    span{
+                        border-bottom: 2px dotted white;
+                        width:5vh;
+                        align-self: center;
+                    }
+
+                    h4 {
+                        font-family: 'DM Serif Text', serif;
+                        font-size: calc(1rem + 0.5vw);
+                        color: #90775d
+                    }
+                }
+
+            }
+        }
+    }
+
+}

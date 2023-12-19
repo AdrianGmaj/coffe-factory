@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ServicesComponent } from './services/services.component';
     HomeComponent,
     ShowcaseComponent,
     AboutUsComponent,
-    ServicesComponent
+    ServicesComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,

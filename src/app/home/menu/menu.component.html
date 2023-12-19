@@ -1,0 +1,27 @@
+<section class="menu">
+  <div class="menu-content">
+    <h2 class="menu-content_title">Menu</h2>
+    <p class="menu-content_para">
+      Delight in our diverse menu, crafted to satisfy all cravings. </p>
+
+    <div class="menu-content_container">
+
+      <div *ngFor="let coffee of menu" class="card">
+        <!-- <div class="image-container"> -->
+        <img src="{{coffee.img}}" alt="" class="menu__img">
+        <!-- </div> -->
+        <div class="card-text">
+          <div class="card-heading">
+            <h4>{{coffee.title}}</h4>
+            <span></span>
+            <h4>{{coffee.price | currency}}</h4>
+          </div>
+       
+          <p>{{coffee.label}}</p>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</section>

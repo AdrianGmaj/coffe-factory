@@ -8,11 +8,11 @@ import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing-module';
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
-      ToolbarComponent,
-      
-   ],
+    ToolbarComponent,
+
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
