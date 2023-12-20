@@ -6,7 +6,7 @@
 
     <div class="menu-content_container container">
 
-      <div *ngFor="let coffee of menu" class="card">
+      <div routerLink="/menu-coffee/{{coffee.id}}" *ngFor="let coffee of menu" class="card">
  
         <img src="{{coffee.img1}}" alt="" class="menu__img">
     

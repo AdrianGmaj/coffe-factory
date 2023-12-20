@@ -6,11 +6,13 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing-module';
+import { MenuCoffeeComponent } from './menu-coffee/menu-coffee/menu-coffee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
+    MenuCoffeeComponent
 
   ],
   imports: [
