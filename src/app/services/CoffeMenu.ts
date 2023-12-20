@@ -1,7 +1,10 @@
 export interface CoffeeMenu {
     id: number,
-    img: string,
+    img1: string,
+    img2: string,
+    img3: string,
     title: string,
     price: number,
     label: string,
+    article:string,
 }
