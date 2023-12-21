@@ -7,14 +7,15 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing-module';
 import { MenuCoffeeComponent } from './menu-coffee/menu-coffee/menu-coffee.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     ToolbarComponent,
-    MenuCoffeeComponent
-
-  ],
+    MenuCoffeeComponent,
+      FooterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
