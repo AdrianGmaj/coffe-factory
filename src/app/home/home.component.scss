@@ -32,4 +32,10 @@
     width: 100%;
     height: min-content;
   }
+  app-blog{
+    grid-column: container-start/container-end;
+    width: 100%;
+min-height: min-content; 
+    
+  }
 }

@@ -8,13 +8,15 @@ import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing-module';
 import { MenuCoffeeComponent } from './menu-coffee/menu-coffee/menu-coffee.component';
 import { FooterComponent } from './footer/footer.component';
+import { BlogArticleComponent } from './blog-article/blog-article.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     ToolbarComponent,
     MenuCoffeeComponent,
-      FooterComponent
+      FooterComponent,
+      BlogArticleComponent
    ],
   imports: [
     BrowserModule,

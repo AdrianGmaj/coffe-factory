@@ -7,6 +7,7 @@ import { ShowcaseComponent } from './showcase/showcase.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { MenuComponent } from './menu/menu.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MenuComponent } from './menu/menu.component';
     ShowcaseComponent,
     AboutUsComponent,
     ServicesComponent,
-    MenuComponent
+    MenuComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,
