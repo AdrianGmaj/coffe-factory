@@ -8,6 +8,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { MenuComponent } from './menu/menu.component';
 import { BlogComponent } from './blog/blog.component';
+import { RatingComponent } from './rating/rating.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CarousellComponent } from './rating/carousell/carousell.component';
 
 
 @NgModule({
@@ -17,11 +20,14 @@ import { BlogComponent } from './blog/blog.component';
     AboutUsComponent,
     ServicesComponent,
     MenuComponent,
-    BlogComponent
+    BlogComponent,
+    RatingComponent,
+    CarousellComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule { }

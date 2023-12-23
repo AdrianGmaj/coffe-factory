@@ -6,6 +6,7 @@
 
   app-about-us{
     grid-column: container-start/container-end;
+    width: 100%;
     min-height: 80vh;
     min-height: min-content;
     background-image: url("/assets/home/about-us/wave3.svg");
@@ -33,6 +34,12 @@
     height: min-content;
   }
   app-blog{
+    grid-column: container-start/container-end;
+    width: 100%;
+min-height: min-content; 
+    
+  }
+  app-rating{
     grid-column: container-start/container-end;
     width: 100%;
 min-height: min-content; 
