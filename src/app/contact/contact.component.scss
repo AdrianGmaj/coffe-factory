@@ -1,0 +1,96 @@
+.contact {
+    width: 100%;
+    
+   height: min-content;
+    background-color: #101311;
+
+    border-top: 2px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 6vw;
+
+
+    &-container {
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        width: 60rem;
+
+
+
+        .logo {
+            font-family: 'Asul', serif;
+
+
+            text-decoration: none;
+            font-weight: 800;
+            font-size: calc(1rem + 1vw);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            text-transform: uppercase;
+            color: white;
+
+            .item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                gap: 0.5vw;
+
+                h4 {
+                    font-size: 1rem;
+                    padding-bottom: 0.4rem;
+                }
+
+                p {
+                    font-size: 0.7rem;
+                }
+            }
+
+            i {
+                font-size: 1.5rem;
+                color: white;
+                border: 1px solid #bd9c79;
+                border-radius: 50%;
+                padding: 1rem;
+            }
+        }
+    }
+    @media screen and (max-width: 700px){
+        .contact-list{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    gap: 2vw;
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:1vw;
+        h4{
+            text-align: center;
+        }
+    }
+        }
+    
+    }
+
+}

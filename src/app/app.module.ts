@@ -9,14 +9,18 @@ import { AppRoutingModule } from './app-routing-module';
 import { MenuCoffeeComponent } from './menu-coffee/menu-coffee/menu-coffee.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogArticleComponent } from './blog-article/blog-article.component';
+import { ContactComponent } from './contact/contact.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [				
     AppComponent,
     ToolbarComponent,
     MenuCoffeeComponent,
       FooterComponent,
-      BlogArticleComponent
+      BlogArticleComponent,
+      ContactComponent,
+      NewsletterComponent
    ],
   imports: [
     BrowserModule,
