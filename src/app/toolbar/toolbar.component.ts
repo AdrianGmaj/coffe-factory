@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,18 +9,24 @@ import { HostListener } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    let element = document.querySelector('.nav') as HTMLElement;
-    if (window.scrollY > element.clientHeight*3) {
-      element.classList.add('scrolled');
+      let element = document.querySelector('.nav') as HTMLElement;
+    if (this.router.url === '/') {
+
+      if (window.scrollY > element.clientHeight * 3) {
+        element.classList.add('scrolled');
+      } else {
+        element.classList.remove('scrolled');
+      }
     } else {
-      element.classList.remove('scrolled');
+      
+      element.classList.add('scrolled');
     }
   }
 

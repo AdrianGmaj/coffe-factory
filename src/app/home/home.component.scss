@@ -1,10 +1,10 @@
-.home{
-    display: grid;
+.home {
+  display: grid;
   grid-template-columns: [container-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end]) [center-end] 1fr [container-end];
 
 
 
-  app-about-us{
+  app-about-us {
     grid-column: container-start/container-end;
     width: 100%;
     min-height: 80vh;
@@ -14,35 +14,50 @@
     background-position: center;
     background-size: cover;
 
-   
+
   }
-  app-showcase{
+
+  app-showcase {
     grid-column: container-start/container-end;
     width: 100%;
   }
 
-  app-services{
+  app-services {
     grid-column: container-start/container-end;
     width: 100vw;
-   min-height: 70vh;
+    min-height: 70vh;
     min-height: min-content;
   }
 
-  app-menu{
+  app-menu {
     grid-column: container-start/container-end;
     width: 100%;
     height: min-content;
   }
-  app-blog{
+
+  app-blog {
     grid-column: container-start/container-end;
     width: 100%;
-min-height: min-content; 
-    
+    min-height: min-content;
+
   }
-  app-rating{
+
+  app-rating {
     grid-column: container-start/container-end;
     width: 100%;
-min-height: min-content; 
-    
+    min-height: min-content;
+
   }
+  
+.hidden {
+  opacity: 0;
+  transition:all 1s ease-in-out;
+
+}
+
+.show {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+
+}
 }
