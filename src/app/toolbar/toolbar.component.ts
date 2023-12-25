@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BasketService } from '../services/basket.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,15 +9,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  basket
+  constructor(private router: Router,
+    private basketService: BasketService) { }
 
   ngOnInit() {
+this.basket = this.basketService.getBasket()
 
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-      let element = document.querySelector('.nav') as HTMLElement;
+    let element = document.querySelector('.nav') as HTMLElement;
     if (this.router.url === '/') {
 
       if (window.scrollY > element.clientHeight * 3) {
@@ -25,7 +28,7 @@ export class ToolbarComponent implements OnInit {
         element.classList.remove('scrolled');
       }
     } else {
-      
+
       element.classList.add('scrolled');
     }
   }

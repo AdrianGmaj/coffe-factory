@@ -11,6 +11,11 @@ import { BlogComponent } from './blog/blog.component';
 import { RatingComponent } from './rating/rating.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarousellComponent } from './rating/carousell/carousell.component';
+import { ShopComponent } from './shop/shop.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import { DialogComponent } from './shop/dialog/dialog.component';
+
 
 
 @NgModule({
@@ -22,12 +27,17 @@ import { CarousellComponent } from './rating/carousell/carousell.component';
     MenuComponent,
     BlogComponent,
     RatingComponent,
-    CarousellComponent
+    CarousellComponent,
+    ShopComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatDividerModule,
+
   ]
 })
 export class HomeModule { }

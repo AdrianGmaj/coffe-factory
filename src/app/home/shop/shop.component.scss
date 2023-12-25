@@ -1,0 +1,101 @@
+.shop {
+    width: 100%;
+    padding: 7vh 7vw;
+    background-color: #f2efe6;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        font-family: 'Asul', serif;
+
+
+        h2 {
+
+            font-size: calc(1rem + 2vw);
+            color: black;
+            padding: 5vh 2vw;
+            text-transform: uppercase;
+        }
+        .p-header{
+            font-size: 1.2rem;
+            padding: 1vh 1vw;
+        }
+
+        &_products {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            column-gap: 4vh;
+            row-gap: 8vw;
+            flex-wrap: wrap;
+            padding: 10vh;
+
+            .card {
+                height: 24rem;
+                max-width: 24rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1vw;
+
+                &-img .img {
+
+
+                    height: 20rem;
+                    width: 20rem;
+                    object-fit: cover;
+                }
+
+                &-text {
+                    width: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    gap: 1vh;
+
+                    h4 {
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                        padding-top: 2vh;
+
+
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                    }
+
+                }
+
+                &-buttons {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+
+                    button {
+                        text-decoration: none;
+                        border: none;
+                        width: 30%;
+                        background-color: #006a4e;
+                        font-size: 12px;
+                        border-radius: 5px;
+                        padding: 1rem;
+
+                        color: white;
+                     ;
+                        align-self: center;
+                    }
+                }
+            }
+
+
+
+        }
+    }
+}

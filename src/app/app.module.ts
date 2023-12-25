@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BlogArticleComponent } from './blog-article/blog-article.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [				
@@ -25,7 +27,10 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    BrowserAnimationsModule,
+    MatBadgeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

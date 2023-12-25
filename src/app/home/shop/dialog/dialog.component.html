@@ -1,0 +1,16 @@
+<div class="dialog">
+  <div class="dialog-container">
+    <div class="img">
+      <img src="{{data.img}}" alt="">
+    </div>
+    <div class="content">
+      <h2>{{data.name}}</h2>
+      <p>price: {{data.price | currency }} </p>
+      <i class="para">"{{data.para}}"</i>
+      <div class="buttons">
+        <button (click)="add(data)">buy</button>
+        <button (click)="close()">back to shop</button>
+      </div>
+    </div>
+  </div>
+</div>
