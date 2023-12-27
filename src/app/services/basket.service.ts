@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product';
+import { BasketItem } from './basket-item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
-  basket: Array<Product> = []
+  basket: Array<BasketItem> = []
   constructor() { }
 
   getBasket() {
@@ -13,6 +14,14 @@ export class BasketService {
   }
 
   addToBasket(product: Product) {
-    this.basket.push(product)
+    const item = this.basket.find(element => element.product.id === product.id);
+
+    if (item) {
+      item.count += 1;
+    } else {
+      this.basket.push({ product: product, count: 1 });
+    }
   }
 }
+
+

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BasketService } from '../services/basket.service';
+import { Product } from '../services/product';
+import { BasketItem } from '../services/basket-item';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,12 +11,16 @@ import { BasketService } from '../services/basket.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  basket
+  basket: Array<BasketItem> = [];
+
   constructor(private router: Router,
     private basketService: BasketService) { }
 
+  opened = false;
+
+
   ngOnInit() {
-this.basket = this.basketService.getBasket()
+    this.basket = this.basketService.getBasket()
 
   }
   @HostListener('window:scroll', ['$event'])
@@ -31,6 +37,23 @@ this.basket = this.basketService.getBasket()
 
       element.classList.add('scrolled');
     }
+  }
+
+  numberOfItemsInBasket(): number {
+    return this.basket
+      .map(item => item.count)
+      .reduce((prev, current) => prev + current, 0)
+  }
+
+  removeCount(item: BasketItem): void {
+    if (item.count > 1) {
+      item.count -= 1;
+    }
+  }
+
+  addCount(item: BasketItem): void {
+    item.count += 1;
+
   }
 
 }

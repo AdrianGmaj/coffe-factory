@@ -12,25 +12,28 @@ import { BlogArticleComponent } from './blog-article/blog-article.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [				
+  declarations: [
     AppComponent,
     ToolbarComponent,
     MenuCoffeeComponent,
-      FooterComponent,
-      BlogArticleComponent,
-      ContactComponent,
-      NewsletterComponent
-   ],
+    FooterComponent,
+    BlogArticleComponent,
+    ContactComponent,
+    NewsletterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     BrowserAnimationsModule,
-    MatBadgeModule
-    
+    MatBadgeModule, MatSidenavModule,
+    MatDividerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

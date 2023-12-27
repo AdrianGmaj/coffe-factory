@@ -1,29 +1,52 @@
 <nav class="nav" (scroll)="onWindowScroll()">
-  
+
   <div class="nav_container">
-  <a href="" class="nav_logo">
-    <i>Coffee Factory</i>
+    <a href="" class="nav_logo">
+      <i>Coffee Factory</i>
 
-    <!-- <i class="fa-regular fa-mug-hot"></i> -->
-    <img src="/assets/home/toolbar/cup.png" alt="">
-  </a>
+      <!-- <i class="fa-regular fa-mug-hot"></i> -->
+      <img src="/assets/home/toolbar/cup.png" alt="">
+    </a>
 
-  <ul class="nav_links">
-    <li routerLinkActive="active">home</li>
-    <li routerLinkActive="active">about</li>
-    <li routerLinkActive="active">services</li>
-    <li routerLinkActive="active">menu</li>
-    <li routerLinkActive="active">blog</li>
+    <ul class="nav_links">
+      <li routerLinkActive="active">home</li>
+      <li routerLinkActive="active">about</li>
+      <li routerLinkActive="active">services</li>
+      <li routerLinkActive="active">menu</li>
+      <li routerLinkActive="active">blog</li>
 
-  </ul>
-  <div class="nav_icons">
-    <span id="search_icon" class="material-symbols-outlined">
-      search
+    </ul>
+    <div class="nav_icons">
+      <span id="search_icon" class="material-symbols-outlined">
+        search
       </span>
-      <span      matBadge="{{basket.length}}" matBadgePosition="before" matBadgeColor="accent"  id="shop_icon" class="material-symbols-outlined">
+      <span (click)="opened =! opened" matBadge="{{numberOfItemsInBasket()}}" matBadgePosition="before" matBadgeColor="accent"
+        id="shop_icon" class="material-symbols-outlined">
         shopping_cart
-        
-        </span>
+      </span>
+    </div>
   </div>
-</div>
 </nav>
+
+
+
+<div [class.active]="opened" class="basket">
+  <div class="basket-content" [class.active]="opened">
+
+
+    <i (click)="opened = false" class="fa-regular fa-circle-xmark"></i>
+    <h2>your basket</h2>
+    <div class="products">
+      <div *ngFor="let item of basket" class="products-card">
+        <img src="{{item.product.img}}" alt="">
+        <div class="text">
+          <h4>{{item.product.name}}</h4>
+          <p><button (click)="removeCount(item)" [disabled]="item.count === 1">-</button>{{item.count}}<button (click)="addCount(item)">+</button></p>
+          <p>cena pojedyncego produktu: {{item.product.price | currency}}</p>
+          <b>suma {{(item.product.price * item.count)| currency}}</b>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
