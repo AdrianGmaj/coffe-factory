@@ -20,8 +20,8 @@
       <span id="search_icon" class="material-symbols-outlined">
         search
       </span>
-      <span (click)="opened =! opened" matBadge="{{numberOfItemsInBasket()}}" matBadgePosition="before" matBadgeColor="accent"
-        id="shop_icon" class="material-symbols-outlined">
+      <span (click)="opened =! opened" matBadge="{{numberOfItemsInBasket()}}" matBadgePosition="before"
+        matBadgeColor="accent" id="shop_icon" class="material-symbols-outlined">
         shopping_cart
       </span>
     </div>
@@ -39,13 +39,23 @@
     <div class="products">
       <div *ngFor="let item of basket" class="products-card">
         <img src="{{item.product.img}}" alt="">
-        <div class="text">
-          <h4>{{item.product.name}}</h4>
-          <p><button (click)="removeCount(item)" [disabled]="item.count === 1">-</button>{{item.count}}<button (click)="addCount(item)">+</button></p>
-          <p>cena pojedyncego produktu: {{item.product.price | currency}}</p>
-          <b>suma {{(item.product.price * item.count)| currency}}</b>
-        </div>
+        <div class="content">
 
+          <div class="content-1">
+            <h4>{{item.product.name}}</h4>
+            <p>price: {{item.product.price | currency}}</p>
+          
+          </div>
+
+        
+
+          <button (click)="removeCount(item)" [disabled]="item.count === 1">
+           -</button>
+          {{item.count}}
+          <button (click)="addCount(item)"> +</button>
+
+        </div>
+        <b>sum: {{(item.product.price * item.count)| currency}}</b>
       </div>
 
     </div>

@@ -147,11 +147,38 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            height: fit-content;
             img{
                 height: 100px;
                 width: 100px;
                 object-fit: cover;
             }
+            .content{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 3vw;
+                &-1{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        button{
+            background-color: transparent; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 1px 1px; /* Some padding */
+            font-size: 12px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            border: 1px solid black ;
+            width: 20px;
+            height: 20px;
+       
+
+            color:black;
         }
         mat-divider{
             width: 100%;
