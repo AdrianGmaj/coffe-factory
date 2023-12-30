@@ -15,9 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     ToolbarComponent,
     MenuCoffeeComponent,
@@ -25,7 +26,8 @@ import { MatDividerModule } from '@angular/material/divider';
     BlogArticleComponent,
     ContactComponent,
     NewsletterComponent,
-  ],
+      AboutUsComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
