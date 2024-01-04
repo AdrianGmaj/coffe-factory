@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,12 +19,20 @@ export class HomeComponent implements OnInit {
     })
   })
 
-  constructor() { }
+
+  constructor(private viewportScroller: ViewportScroller,private route: ActivatedRoute) { }
 
   ngOnInit() {
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((element)=> this.observer.observe(element))
     console.log(hiddenElements)
+  }
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      this.viewportScroller.scrollToAnchor(fragment)
+      console.log(fragment)
+    }
+    )
   }
 
 }

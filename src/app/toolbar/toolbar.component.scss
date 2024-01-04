@@ -9,7 +9,9 @@
     color: white;
     padding-left: 4vw;
     padding-right: 4vw;
-
+.hamburger{
+visibility: hidden;
+}
 
     &.scrolled {
         background-color: #101311;
@@ -188,4 +190,14 @@
 
 
 }
+@media screen and (max-width: 700px){
+    .nav_links{
+        flex-direction: column;
+        
+    }
+    .hamburger{
+visibility: visible;
+    }
+}
+
 

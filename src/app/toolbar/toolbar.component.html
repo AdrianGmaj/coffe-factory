@@ -1,6 +1,7 @@
 <nav class="nav" (scroll)="onWindowScroll()">
 
   <div class="nav_container">
+   <div class="hamburger"><i class="fa-solid fa-bars"></i></div> 
     <a href="" class="nav_logo">
       <i>Coffee Factory</i>
 
@@ -9,11 +10,12 @@
     </a>
 
     <ul class="nav_links">
-      <li routerLinkActive="active">home</li>
-      <li routerLinkActive="active">about</li>
-      <li routerLinkActive="active">services</li>
-      <li routerLinkActive="active">menu</li>
-      <li routerLinkActive="active">blog</li>
+   
+      <li routerLinkActive="active" routerLink="" fragment="about">about</li>
+      <li routerLinkActive="active" routerLink="" fragment="services">services</li>
+      <li routerLinkActive="active" routerLink="" fragment="menu">menu</li>
+      <li routerLinkActive="active" routerLink="" fragment="blog">blog</li>
+      <li routerLinkActive="active" routerLink=""  fragment="opinions">opinions</li>
 
     </ul>
     <div class="nav_icons">
