@@ -16,7 +16,8 @@ export class ToolbarComponent implements OnInit {
   constructor(private router: Router,
     private basketService: BasketService) { }
 
-  opened = false;
+  basketOpened = false;
+  sideOpened= false;
 
 
   ngOnInit() {

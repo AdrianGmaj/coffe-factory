@@ -1,28 +1,30 @@
 <nav class="nav" (scroll)="onWindowScroll()">
 
   <div class="nav_container">
-   <div class="hamburger"><i class="fa-solid fa-bars"></i></div> 
-    <a href="" class="nav_logo">
-      <i>Coffee Factory</i>
+    <span (click)="sideOpened =! sideOpened" class="hamburger"><i class="fa-solid fa-bars"></i></span>
+    <div class="nav_content">
+      <a href="" class="nav_logo">
+        <i>Coffee Factory</i>
 
-      <!-- <i class="fa-regular fa-mug-hot"></i> -->
-      <img src="/assets/home/toolbar/cup.png" alt="">
-    </a>
 
-    <ul class="nav_links">
-   
-      <li routerLinkActive="active" routerLink="" fragment="about">about</li>
-      <li routerLinkActive="active" routerLink="" fragment="services">services</li>
-      <li routerLinkActive="active" routerLink="" fragment="menu">menu</li>
-      <li routerLinkActive="active" routerLink="" fragment="blog">blog</li>
-      <li routerLinkActive="active" routerLink=""  fragment="opinions">opinions</li>
+        <img src="/assets/home/toolbar/cup.png" alt="">
+      </a>
 
-    </ul>
+      <ul class="nav_links">
+
+        <li routerLinkActive="active" routerLink="" fragment="about">about</li>
+        <li routerLinkActive="active" routerLink="" fragment="services">services</li>
+        <li routerLinkActive="active" routerLink="" fragment="menu">menu</li>
+        <li routerLinkActive="active" routerLink="" fragment="blog">blog</li>
+        <li routerLinkActive="active" routerLink="" fragment="opinions">opinions</li>
+
+      </ul>
+    </div>
     <div class="nav_icons">
       <span id="search_icon" class="material-symbols-outlined">
         search
       </span>
-      <span (click)="opened =! opened" matBadge="{{numberOfItemsInBasket()}}" matBadgePosition="before"
+      <span (click)="basketOpened =! basketOpened" matBadge="{{numberOfItemsInBasket()}}" matBadgePosition="before"
         matBadgeColor="accent" id="shop_icon" class="material-symbols-outlined">
         shopping_cart
       </span>
@@ -31,12 +33,12 @@
 </nav>
 
 
+<!-- basket side -->
+<div [class.active]="basketOpened" class="basket">
+  <div class="basket-content" [class.active]="basketOpened">
 
-<div [class.active]="opened" class="basket">
-  <div class="basket-content" [class.active]="opened">
 
-
-    <i (click)="opened = false" class="fa-regular fa-circle-xmark"></i>
+    <i (click)="basketOpened = false" class="fa-regular fa-circle-xmark"></i>
     <h2>your basket</h2>
     <div class="products">
       <div *ngFor="let item of basket" class="products-card">
@@ -46,13 +48,13 @@
           <div class="content-1">
             <h4>{{item.product.name}}</h4>
             <p>price: {{item.product.price | currency}}</p>
-          
+
           </div>
 
-        
+
 
           <button (click)="removeCount(item)" [disabled]="item.count === 1">
-           -</button>
+            -</button>
           {{item.count}}
           <button (click)="addCount(item)"> +</button>
 
@@ -61,4 +63,20 @@
       </div>
 
     </div>
+  </div>
+<!-- sidenav -->
+<div [class.open]="sideOpened" class="side">
+  <div class="side-content" [class.open]="sideOpened">
+
+
+    <i (click)="sideOpened = false" class="fa-regular fa-circle-xmark"></i>
+    <ul class="side_links">
+
+      <li routerLinkActive="active" routerLink="" fragment="about">about</li>
+      <li routerLinkActive="active" routerLink="" fragment="services">services</li>
+      <li routerLinkActive="active" routerLink="" fragment="menu">menu</li>
+      <li routerLinkActive="active" routerLink="" fragment="blog">blog</li>
+      <li routerLinkActive="active" routerLink="" fragment="opinions">opinions</li>
+
+    </ul>
   </div>
