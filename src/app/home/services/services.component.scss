@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     gap:3vh;
+    padding: 7vh 7vw;
  
     &-title{
         font-family: 'DM Serif Text', serif;
@@ -19,8 +20,9 @@
         display: grid;
         padding: 6vh 9vw;
 
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
         gap:9vh calc(1rem + 1vw);
+        align-items: center;
       
 
       
@@ -53,12 +55,23 @@
 
     }
     @media screen and (max-width: 700px){
+        .services{
+            padding: 1vh 1vw;
+        }
 .card{
-    width: 60vw;
+    width: 70vw;
+    align-self: center;
     &-img{
         width: 50px;
     }
 
+}
+.services-content{
+    padding: 1vh 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 }

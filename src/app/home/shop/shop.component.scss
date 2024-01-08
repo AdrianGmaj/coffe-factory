@@ -1,6 +1,6 @@
 .shop {
     width: 100%;
-    padding: 7vh 7vw;
+    padding: 6vh 6vw;
     background-color: #f2efe6;
 
     &-container {
@@ -32,16 +32,16 @@
             column-gap: 4vh;
             row-gap: 8vw;
             flex-wrap: wrap;
-            padding: 10vh;
+            padding: 15vh;
 
             .card {
-                height: 24rem;
-                max-width: 24rem;
+                height: 29rem;
+                max-width: 29rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 1vw;
+                gap: 2vw;
 
                 &-img .img {
 
@@ -99,3 +99,14 @@
         }
     }
 }
+@media screen and (max-width: 700px) {
+    .shop-container{
+
+    }
+.shop-container_products{
+    row-gap:30vw;
+}
+.card{
+
+}
+    }
