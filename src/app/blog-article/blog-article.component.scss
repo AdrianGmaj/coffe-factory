@@ -21,7 +21,7 @@
     background-image:linear-gradient(to top, #f2efe6, transparent), url('/assets/home/blog/topper.jpg');
     background-size:cover;
     background-position:center;
-    filter:grayscale(70%);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,5 +94,17 @@
         
         }
     }
+
+}
+@media screen and (max-width: 700px){
+.article-container{
+    padding-left:0vh ;
+    padding-right:0vh ;
+    margin-bottom: 5vh;
+}
+.article-container_img{
+    height: calc(50vh);
+    width: calc(80vw);
+}
 
 }
