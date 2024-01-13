@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BasketService } from '../services/basket.service';
 import { Product } from '../services/product';
 import { BasketItem } from '../services/basket-item';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,7 +16,8 @@ export class ToolbarComponent implements OnInit {
   basket: Array<BasketItem> = [];
 
   constructor(private router: Router,
-    private basketService: BasketService) { }
+    private basketService: BasketService,
+    private dialog: MatDialog,) { }
 
   basketOpened = false;
   sideOpened= false;
@@ -57,4 +60,10 @@ export class ToolbarComponent implements OnInit {
 
   }
 
+
+  showSearch(){
+    this.dialog.open(DialogSearchComponent, {
+      // data: this.product
+    })
+  }
 }
