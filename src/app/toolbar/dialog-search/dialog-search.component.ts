@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CoffeeMenu } from 'src/app/services/CoffeMenu';
 
 @Component({
   selector: 'app-dialog-search',
@@ -6,10 +10,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-search.component.scss']
 })
 export class DialogSearchComponent implements OnInit {
+  inputValue: string
 
-  constructor() { }
+  filteredData: Array<CoffeeMenu>
+  constructor(private dialogRef: MatDialogRef<DialogSearchComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Array<CoffeeMenu>,
+    private router: Router,
+    private dialog: MatDialog,) { }
 
   ngOnInit() {
+  }
+  showCoffee() {
+    this.filteredData = this.data.filter((coffee) => coffee.title.includes(this.inputValue))
+  }
+  choose(id) {
+    this.router.navigateByUrl(`/menu-coffee/${id}`)
+    this.dialog.closeAll()
   }
 
 }

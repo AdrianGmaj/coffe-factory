@@ -6,6 +6,8 @@ import { Product } from '../services/product';
 import { BasketItem } from '../services/basket-item';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSearchComponent } from './dialog-search/dialog-search.component';
+import { MenuService } from '../services/menu.service';
+import { CoffeeMenu } from '../services/CoffeMenu';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,17 +16,20 @@ import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 })
 export class ToolbarComponent implements OnInit {
   basket: Array<BasketItem> = [];
+  coffeeMenu: Array<CoffeeMenu> = []
 
   constructor(private router: Router,
     private basketService: BasketService,
-    private dialog: MatDialog,) { }
+    private dialog: MatDialog,
+    private menu: MenuService) { }
 
   basketOpened = false;
-  sideOpened= false;
+  sideOpened = false;
 
 
   ngOnInit() {
     this.basket = this.basketService.getBasket()
+    this.coffeeMenu = this.menu.getMenu()
 
   }
   @HostListener('window:scroll', ['$event'])
@@ -61,9 +66,9 @@ export class ToolbarComponent implements OnInit {
   }
 
 
-  showSearch(){
+  showSearch() {
     this.dialog.open(DialogSearchComponent, {
-      // data: this.product
+      data: this.coffeeMenu
     })
   }
 }

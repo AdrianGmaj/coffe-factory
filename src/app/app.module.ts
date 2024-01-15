@@ -16,9 +16,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FormsModule } from '@angular/forms';
+import { DialogSearchComponent } from './toolbar/dialog-search/dialog-search.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     ToolbarComponent,
     MenuCoffeeComponent,
@@ -26,15 +28,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
     BlogArticleComponent,
     ContactComponent,
     NewsletterComponent,
-      AboutUsComponent
-   ],
+    AboutUsComponent,
+    DialogSearchComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     BrowserAnimationsModule,
     MatBadgeModule, MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule
 
   ],
   providers: [],
