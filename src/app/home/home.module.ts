@@ -15,6 +15,7 @@ import { ShopComponent } from './shop/shop.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import { DialogComponent } from './shop/dialog/dialog.component';
+import { DialogNavComponent } from '../toolbar/dialog-nav/dialog-nav.component';
 
 
 
@@ -29,7 +30,8 @@ import { DialogComponent } from './shop/dialog/dialog.component';
     RatingComponent,
     CarousellComponent,
     ShopComponent,
-    DialogComponent
+    DialogComponent,
+    DialogNavComponent
   ],
   imports: [
     CommonModule,

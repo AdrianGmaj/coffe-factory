@@ -12,7 +12,7 @@
     padding-right: 4vw;
 
     .hamburger {
-
+        cursor: pointer;
 
     }
 
@@ -50,8 +50,8 @@
         font-size: calc(1rem + 1vw);
         display: flex;
         flex-direction: row;
-        justify-content:start;
-        align-items:start;
+        justify-content: start;
+        align-items: start;
         color: white;
         gap: 0.5rem;
         padding-right: 10rem;
@@ -79,7 +79,7 @@
         font-weight: 500;
         justify-content: space-evenly;
         cursor: pointer;
-       justify-self: center;
+        justify-self: center;
 
 
         li:hover {
@@ -153,6 +153,11 @@
                 font-size: 1.5rem;
                 cursor: pointer;
             }
+
+            h2 {
+                text-transform: uppercase;
+                padding: 3vh 3vw;
+            }
         }
 
         .products {
@@ -187,91 +192,56 @@
                         align-items: center;
                         justify-content: center;
                     }
+
+                    button {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border: none;
+                        background: none;
+                        border: 2px solid black;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+
+                    &-2 {
+                        display: flex;
+                        gap: 1rem;
+                    }
                 }
             }
 
-    
 
-        
+
+
         }
     }
 
 
 }
-.side{
-    font-family: 'Asul', serif;
-    transition: all 1s ease-in-out;
-    opacity: 1;
-    z-index: -100;
-    transition: transform 1s ease-in-out;
 
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: #0000005d;
-    overflow-y: scroll;
-
-    &.open {
-        opacity:inherit;
-        z-index: 1000;
-    }
-    &-content {
-        opacity: 1;
-        height: 100%;
-        width: 100vw;
-        background-color: white;
-
-        position: fixed;
-        left: 0;
-        
-        transform: translateX(-100%);
-        transition: all 1s ease-in-out;
-
-        &.open {
-            transform: translateX(0);
-
-            i {
-                position: absolute;
-                right: 0;
-                padding: 3vh 3vw;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-        }
-ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    height: 80%;
-  list-style: none;
-  li{
-    font-size: 2.5rem;
-  }
-   
-}
-    }
-}
 
 @media screen and (max-width: 700px) {
     .nav_content {
         display: none;
 
     }
-    .nav_container{
-        justify-content:space-between;
+
+    .nav_container {
+        justify-content: space-between;
     }
-    .basket-content{
+
+    .basket-content {
         width: 100%;
     }
 
 
 }
-@media screen and (min-width: 701px) {
-    
 
-        .hamburger {
-            display: none;
-        }
+@media screen and (min-width: 701px) {
+
+
+    .hamburger {
+        display: none;
+    }
 
 }

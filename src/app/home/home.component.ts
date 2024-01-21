@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit(): void {
     this.route.fragment.subscribe(fragment => {
       this.viewportScroller.scrollToAnchor(fragment)
-      console.log(fragment)
+      console.log('my tu som:',fragment)
     }
     )
   }

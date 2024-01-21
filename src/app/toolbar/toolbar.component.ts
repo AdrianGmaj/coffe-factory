@@ -70,13 +70,13 @@ export class ToolbarComponent implements OnInit {
   showSearch() {
     this.dialog.open(DialogSearchComponent, {
       data: this.coffeeMenu,
- 
+
     })
   }
   showSide() {
     this.dialog.open(DialogNavComponent, {
       data: this.coffeeMenu,
-      position: {top: '0px', left:'0px'} 
+      position: { top: '0px', left: '0px' }
     })
   }
 }

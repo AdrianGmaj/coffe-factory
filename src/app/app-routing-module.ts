@@ -10,23 +10,27 @@ import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  { path: '', component: HomeComponent },
   {
-    path:'menu-coffee/:id',
-    component:MenuCoffeeComponent
-  },{
-    path:'blog-article/:id',
-    component:BlogArticleComponent
+    path: 'menu-coffee/:id',
+    component: MenuCoffeeComponent
+  }, {
+    path: 'blog-article/:id',
+    component: BlogArticleComponent
   },
-  ,{
-    path:'about-us',
-    component:AboutUsComponent
+  , {
+    path: 'about-us',
+    component: AboutUsComponent
   },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
