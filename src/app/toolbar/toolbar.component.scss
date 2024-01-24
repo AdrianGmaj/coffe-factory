@@ -165,18 +165,22 @@
             flex-direction: column;
             justify-content: center;
             padding: 2vh 2vw;
-            gap: 1vw;
+            gap: 2vw;
 
             &-card {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                height: fit-content;
+                height: 0.7rem;
+                font-size: 1rem;
+                padding: 1rem 1rem;
+                border-bottom: 1px solid black;
+
 
                 img {
-                    height: 100px;
-                    width: 100px;
+                    height: 2rem;
+                    width: 2rem;
                     object-fit: cover;
                 }
 
@@ -185,6 +189,7 @@
                     flex-direction: row;
                     justify-content: space-between;
                     gap: 3vw;
+
 
                     &-1 {
                         display: flex;
@@ -203,6 +208,7 @@
                         cursor: pointer;
                     }
 
+
                     &-2 {
                         display: flex;
                         gap: 1rem;
@@ -214,11 +220,97 @@
 
 
         }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 2rem 2rem;
+
+            span {
+                height: 3rem;
+                width: 8rem;
+                background-color: #91785d;
+                border-radius: 2px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            button {
+                background: none;
+                border: none;
+                height: 3rem;
+                width: 8rem;
+                background-color: #bd9c79;
+                color: white;
+                border-radius: 2px;
+                cursor: pointer;
+                transition: all 1s ease-in-out;
+            }
+
+            button:hover {
+                background-color: #e0bb93;
+                transition: all 0.3s ease-in-out;
+
+            }
+        }
     }
 
 
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .form-fields {
+        padding: 5vh 5vw
+    }
+
+    mat-form-field {
+        width: 27rem;
+    }
+
+    .card-numbers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 27rem;
+
+        mat-form-field {
+            width: 30%;
+        }
+    }
+
+    .submit {
+        border: none;
+        background: none;
+        width: 50%;
+        height: 2rem;
+        background-color: #3d893d;
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-family: 'Asul', serif;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+      
+       
+      
+
+
+    }
+
+    .submit:hover {
+        background-color: #449844;
+    }
+}
 
 @media screen and (max-width: 700px) {
     .nav_content {

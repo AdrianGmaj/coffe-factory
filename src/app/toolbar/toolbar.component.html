@@ -37,35 +37,99 @@
 <div [class.active]="basketOpened" class="basket">
   <div class="basket-content" [class.active]="basketOpened">
 
+    <span *ngIf="!buyBasket">
+      <i (click)="basketOpened = false" class="fa-regular fa-circle-xmark"></i>
+      <h2>your basket</h2>
+      <div class="products">
+        <div *ngFor="let item of basket" class="products-card">
+          <img src="{{item.product.img}}" alt="">
+          <div class="content">
 
-    <i (click)="basketOpened = false" class="fa-regular fa-circle-xmark"></i>
-    <h2>your basket</h2>
-    <div class="products">
-      <div *ngFor="let item of basket" class="products-card">
-        <img src="{{item.product.img}}" alt="">
-        <div class="content">
+            <div class="content-1">
+              <h4>{{item.product.name}}</h4>
+              <p>price: {{item.product.price | currency}}</p>
 
-          <div class="content-1">
-            <h4>{{item.product.name}}</h4>
-            <p>price: {{item.product.price | currency}}</p>
+            </div>
+
+
+            <div class="content-2"> <button (click)="removeCount(item)" [disabled]="item.count === 1">
+                -</button>
+
+
+              <p> {{item.count}}</p>
+
+
+              <button (click)="addCount(item)"> +</button>
+            </div>
+
 
           </div>
-
-
-          <div class="content-2"> <button (click)="removeCount(item)" [disabled]="item.count === 1">
-              -</button>
-
-
-            <p> {{item.count}}</p>
-
-
-            <button (click)="addCount(item)"> +</button>
-          </div>
-
-
+          <b>sum: {{(item.product.price * item.count)| currency}}</b>
         </div>
-        <b>sum: {{(item.product.price * item.count)| currency}}</b>
-      </div>
 
-    </div>
+      </div>
+      <div class="buttons">
+        <button (click)="openBuy()" class="buy">buy</button>
+        <button (click)="basketOpened = false" class="shop">back to shop</button>
+        <span *ngIf="basket" class="total">total:{{basketTotal() | currency}}
+
+        </span>
+
+      </div>
+    </span>
+
+    <span *ngIf="buyBasket">
+      <i (click)="basketOpened = false" class="fa-regular fa-circle-xmark"></i>
+
+
+
+
+      <form>
+        <div class="form-fields">
+          <h2>Personal Information</h2>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>name & surname</mat-label>
+              <input formControlName="description" type="text" matInput>
+            </mat-form-field>
+          </div>
+          <div class="m-2">
+            <mat-form-field class="example-full-width">
+              <mat-label>Telephone</mat-label>
+              <span matPrefix>+048 &nbsp;</span>
+              <input type="tel" matInput placeholder="555-555-1234">
+
+            </mat-form-field>
+          </div>
+          <div class="m-2">
+            <mat-form-field appearance="fill">
+              <mat-label>address</mat-label>
+              <input formControlName="description" type="text" matInput>
+            </mat-form-field>
+          </div>
+          <h2>Card Information</h2>
+          <div class="m-2">
+            <mat-form-field appearance="fill">
+              <mat-label>card number</mat-label>
+              <input formControlName="description" type="number" matInput>
+            </mat-form-field>
+          </div>
+          <div class="card-numbers">
+            <mat-form-field appearance="fill">
+              <mat-label>mm</mat-label>
+              <input formControlName="description" type="number" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>yyyy</mat-label>
+              <input formControlName="description" type="number" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>cvv</mat-label>
+              <input formControlName="description" type="number" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <button class="submit" type="submit">submit</button>
+      </form>
+    </span>
   </div>

@@ -18,6 +18,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FormsModule } from '@angular/forms';
 import { DialogSearchComponent } from './toolbar/dialog-search/dialog-search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,12 @@ import { DialogSearchComponent } from './toolbar/dialog-search/dialog-search.com
     BrowserAnimationsModule,
     MatBadgeModule, MatSidenavModule,
     MatDividerModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
+  
+    
 
   ],
   providers: [],

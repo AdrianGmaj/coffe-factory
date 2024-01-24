@@ -23,8 +23,10 @@ export class DialogNavComponent implements OnInit {
   }
 
   goToFragment(fragment: string) {
-   
-    this.router.navigate([''], { fragment: fragment})
     this.dialogRef.close()
+    setTimeout(() => {
+      this.router.navigate([''], { fragment: fragment })
+    }, 100);
+
   }
 }

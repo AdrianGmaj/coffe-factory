@@ -18,6 +18,7 @@ import { DialogNavComponent } from './dialog-nav/dialog-nav.component';
 export class ToolbarComponent implements OnInit {
   basket: Array<BasketItem> = [];
   coffeeMenu: Array<CoffeeMenu> = []
+  buyBasket = false;
 
   constructor(private router: Router,
     private basketService: BasketService,
@@ -78,5 +79,15 @@ export class ToolbarComponent implements OnInit {
       data: this.coffeeMenu,
       position: { top: '0px', left: '0px' }
     })
+  }
+
+  basketTotal() {
+    return this.basket
+      .map(item => item.product.price * item.count)
+      .reduce((prev, current) => prev + current, 0)
+  }
+
+  openBuy(){
+    this.buyBasket = true
   }
 }
