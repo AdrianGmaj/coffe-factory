@@ -9,6 +9,7 @@ import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 import { MenuService } from '../services/menu.service';
 import { CoffeeMenu } from '../services/CoffeMenu';
 import { DialogNavComponent } from './dialog-nav/dialog-nav.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-toolbar',
@@ -28,6 +29,24 @@ export class ToolbarComponent implements OnInit {
   basketOpened = false;
   sideOpened = false;
 
+  buyForm = new FormGroup({
+    nameAndSurname: new FormControl('',
+      [Validators.required]),
+    phone: new FormControl('',
+      [Validators.required]
+    ),
+    address: new FormControl('',
+      [Validators.required]),
+    cardNumber: new FormControl('',
+      [Validators.required]),
+    month: new FormControl('',
+      [Validators.required]),
+
+    year: new FormControl('',
+      [Validators.required]),
+    cvv: new FormControl('',
+      [Validators.required])
+  })
 
   ngOnInit() {
     this.basket = this.basketService.getBasket()
@@ -87,7 +106,15 @@ export class ToolbarComponent implements OnInit {
       .reduce((prev, current) => prev + current, 0)
   }
 
-  openBuy(){
+  openBuy() {
     this.buyBasket = true
+  }
+
+  buyFormSubmit(formValue) {
+    this.basket.length = 0;
+    this.basketOpened = false;
+    this.buyBasket = false
+    alert('thank you!')
+    formValue = ''
   }
 }

@@ -84,52 +84,52 @@
 
 
 
-      <form>
+      <form [formGroup]="buyForm">
         <div class="form-fields">
           <h2>Personal Information</h2>
           <div>
             <mat-form-field appearance="fill">
               <mat-label>name & surname</mat-label>
-              <input formControlName="description" type="text" matInput>
+              <input formControlName="nameAndSurname" type="text" matInput>
             </mat-form-field>
           </div>
           <div class="m-2">
             <mat-form-field class="example-full-width">
               <mat-label>Telephone</mat-label>
               <span matPrefix>+048 &nbsp;</span>
-              <input type="tel" matInput placeholder="555-555-1234">
+              <input formControlName="phone" type="tel" matInput placeholder="555-555-1234">
 
             </mat-form-field>
           </div>
           <div class="m-2">
             <mat-form-field appearance="fill">
               <mat-label>address</mat-label>
-              <input formControlName="description" type="text" matInput>
+              <input formControlName="address" type="text" matInput>
             </mat-form-field>
           </div>
           <h2>Card Information</h2>
           <div class="m-2">
             <mat-form-field appearance="fill">
               <mat-label>card number</mat-label>
-              <input formControlName="description" type="number" matInput>
+              <input formControlName="cardNumber" type="number" matInput>
             </mat-form-field>
           </div>
           <div class="card-numbers">
             <mat-form-field appearance="fill">
               <mat-label>mm</mat-label>
-              <input formControlName="description" type="number" matInput>
+              <input formControlName="month" type="number" matInput>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>yyyy</mat-label>
-              <input formControlName="description" type="number" matInput>
+              <input formControlName="year" type="number" matInput>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>cvv</mat-label>
-              <input formControlName="description" type="number" matInput>
+              <input formControlName="cvv" type="number" matInput>
             </mat-form-field>
           </div>
         </div>
-        <button class="submit" type="submit">submit</button>
+        <button (click)="buyFormSubmit(buyForm.value)" class="submit" type="submit">submit</button>
       </form>
     </span>
   </div>

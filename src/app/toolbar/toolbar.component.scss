@@ -135,7 +135,7 @@
     &-content {
         opacity: 1;
         height: 100%;
-        width: 40vw;
+        width: 50vw;
         background-color: white;
 
         position: fixed;
@@ -300,9 +300,9 @@ form {
         font-family: 'Asul', serif;
         cursor: pointer;
         transition: all 1s ease-in-out;
-      
-       
-      
+
+
+
 
 
     }
@@ -312,7 +312,7 @@ form {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
     .nav_content {
         display: none;
 
@@ -329,7 +329,7 @@ form {
 
 }
 
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 780px) {
 
 
     .hamburger {
