@@ -1,0 +1,48 @@
+.admin {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    min-height: 100vh;
+    padding-top: 56px;
+
+
+    &-nav {
+        background-color: #f2efe6;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Asul', serif;
+        position: static;
+
+        h3 {
+            font-size: calc(1rem + 1.5vw);
+            align-self: center;
+            padding: 1rem;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+            gap: 1rem;
+            padding: 3rem 3rem;
+
+            li {
+                font-size: 1.5rem;
+                cursor: pointer;
+
+
+            }
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            height: 2rem;
+        }
+        .active{
+            border-bottom: 1px solid black;
+        }
+    }
+
+
+}

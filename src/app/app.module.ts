@@ -21,6 +21,8 @@ import { DialogSearchComponent } from './toolbar/dialog-search/dialog-search.com
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { RouterModule } from '@angular/router';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {MatInputModule} from '@angular/material/input';
     ContactComponent,
     NewsletterComponent,
     AboutUsComponent,
-    DialogSearchComponent
+    DialogSearchComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,9 @@ import {MatInputModule} from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule,
+    AdminModule
   
     
 

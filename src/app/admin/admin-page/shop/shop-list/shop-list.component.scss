@@ -1,0 +1,27 @@
+.shop-list {
+    padding: calc(3rem + 2vw);
+
+    background-image: url("/assets/home/about-us/wave3.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    h3 {
+        font-size: calc(1rem + 1.5vw);
+        font-family: 'Asul', serif;
+        padding: 1rem;
+    }
+
+    img {
+        height: 5rem;
+        width: 5rem;
+        object-fit: cover;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        height: 100%;
+    }
+}
