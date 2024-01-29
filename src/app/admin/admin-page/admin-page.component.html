@@ -1,0 +1,14 @@
+<section class="admin">
+  <div class="admin-nav">
+    <h3>admin page <i class="fa-solid fa-user"></i> </h3>
+    <ul class="nav-list">
+      <li routerLink="menu" routerLinkActive="active">menu</li>
+      <li routerLink="blog" routerLinkActive="active">blog</li>
+      <li routerLink="shop" routerLinkActive="active">shop</li>
+    </ul>
+    <button>log out</button>
+  </div>
+  <div class="admin-content">
+    <router-outlet></router-outlet>
+  </div>
+</section>
