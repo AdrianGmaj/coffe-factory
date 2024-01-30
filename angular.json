@@ -71,7 +71,8 @@
               "browserTarget": "coffe-factory:build:production"
             },
             "development": {
-              "browserTarget": "coffe-factory:build:development"
+              "browserTarget": "coffe-factory:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

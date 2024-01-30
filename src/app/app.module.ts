@@ -23,6 +23,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { AdminModule } from './admin/admin.module';
+import { LogInModule } from './log-in/log-in.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { AdminModule } from './admin/admin.module';
     ReactiveFormsModule,
     MatInputModule,
     RouterModule,
-    AdminModule
+    AdminModule,
+    LogInModule,
+    HttpClientModule
   
     
 

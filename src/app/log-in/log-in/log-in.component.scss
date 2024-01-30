@@ -1,0 +1,47 @@
+.log-in{
+    padding-top: 56px;
+    height: 100vh;
+    background-image: url("/assets/home/about-us/wave3.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+    }
+
+    &_form{
+        background-color: black;
+       
+        height: 20rem;
+        width: 40vw;
+
+        h3{
+            text-transform: uppercase;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            background-color:#bd9c79;
+            padding: 1rem;
+
+            button{
+                width: 40vw;
+                align-self: center;
+                background-color: #006a4e;
+                color: white;
+            }
+        }
+    }
+}
