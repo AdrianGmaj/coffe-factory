@@ -16,11 +16,11 @@ export class ShopComponent implements OnInit {
   product: Product
   constructor(private shopService: ShopService,
     private dialog: MatDialog,
-  private basketService: BasketService) { }
+    private basketService: BasketService) { }
 
   ngOnInit() {
     this.shop = this.shopService.getShop();
-   
+
   }
   showDetails(id) {
     this.product = this.shop.find((product) => product.id == id)
@@ -29,7 +29,7 @@ export class ShopComponent implements OnInit {
       data: this.product
     })
   }
-  buy(product){
+  buy(product) {
     this.basketService.addToBasket(product)
   }
 }

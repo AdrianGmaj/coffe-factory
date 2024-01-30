@@ -5,7 +5,10 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShopAddComponent } from './shop-add/shop-add.component';
 import { ShopEditComponent } from './shop-edit/shop-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [ShopListComponent,
@@ -14,7 +17,11 @@ import { ShopEditComponent } from './shop-edit/shop-edit.component';
   imports: [
     CommonModule,
     ShopRoutingModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class ShopModule { }

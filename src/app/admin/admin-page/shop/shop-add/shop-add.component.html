@@ -1,3 +1,38 @@
-<p>
-  shop-add works!
-</p>
+
+<section class="shop-add">
+  <h3>Add new product</h3>
+  <div class="shop-add_form">
+  <form [formGroup]="shopAddForm" class="p-3" action="">
+    
+
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>name</mat-label>
+        <input formControlName="name" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>image</mat-label>
+        <input formControlName="img" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>price</mat-label>
+        <input formControlName="price" type="number" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>description</mat-label>
+        <input formControlName="para" type="text" matInput>
+      </mat-form-field>
+    </div>
+
+
+
+    <button (click)="addProduct(shopAddForm.value)" class="add" type="submit">ADD</button>
+  </form>
+</div>
+</section>
