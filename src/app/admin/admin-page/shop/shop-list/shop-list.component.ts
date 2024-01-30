@@ -5,6 +5,8 @@ import { ShopService } from 'src/app/services/shop.service';
 import { ShopAddComponent } from '../shop-add/shop-add.component';
 import { ProductResponse } from 'src/app/services/ProductResponse';
 import { Observable } from 'rxjs';
+import { ShopEditComponent } from '../shop-edit/shop-edit.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-shop-list',
@@ -13,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class ShopListComponent implements OnInit {
   shop: Array<Product>;
-  products$: Observable <Array<ProductResponse>>
+  products$: Observable<Array<ProductResponse>>
   displayedColumns: string[] = [
 
     'name',
@@ -22,6 +24,7 @@ export class ShopListComponent implements OnInit {
     'actions'
 
   ]
+
   constructor(private shopService: ShopService, private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -29,20 +32,28 @@ export class ShopListComponent implements OnInit {
     this.products$ = this.shopService.getProducts()
   }
 
-  addDialog(){
+  addDialog() {
     this.dialog.open(ShopAddComponent)
-    .afterClosed().subscribe(() => {
-      console.log('djalog jest zamkniety')
-      this.products$ = this.shopService.getProducts()
+      .afterClosed().subscribe(() => {
+        console.log('djalog jest zamkniety')
+        this.products$ = this.shopService.getProducts()
+      })
+  }
+
+  editProduct(element) {
+   
+   
+    this.dialog.open(ShopEditComponent,{
+      data: element
     })
   }
 
-  deleteProduct(id){
-    this.shopService.deleteProduct(id).subscribe(()=>{
+  deleteProduct(id) {
+    this.shopService.deleteProduct(id).subscribe(() => {
       this.products$ = this.shopService.getProducts()
       console.log(id)
     })
- 
+
   }
 }
 // id: number,

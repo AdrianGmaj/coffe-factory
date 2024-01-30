@@ -20,7 +20,7 @@
         <th mat-header-cell *matHeaderCellDef> actions </th>
         <td class="actions" mat-cell *matCellDef="let element">
           <span class="buttons">
-          <button class="edit" routerLink="/admin/categories/edit/{{element.id}}">edit</button>
+          <button (click)="editProduct(element)">edit</button>
           <button (click)="deleteProduct(element.id)" class="delete" >delete</button>
         </span>
         </td>
