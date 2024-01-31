@@ -69,4 +69,8 @@ export class ShopService {
   deleteProduct(id):Observable<ProductResponse>{
     return this.http.delete<ProductResponse>(`/api/products/${id}`)
   }
+
+  editProduct(id:number, value:Product){
+    return this.http.patch<ProductResponse>(`/api/products/${id}`, value)
+  }
 }

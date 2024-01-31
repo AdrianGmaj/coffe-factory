@@ -6,7 +6,10 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { MenuAddComponent } from './menu-add/menu-add.component';
 import { MatTableModule } from '@angular/material/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,10 @@ import { MatTableModule } from '@angular/material/table';
     CommonModule,
     MenuRoutingModule,
     MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class MenuModule { }

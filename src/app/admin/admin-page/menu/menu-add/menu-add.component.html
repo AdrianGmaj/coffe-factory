@@ -1,3 +1,64 @@
-<p>
-  menu-add works!
-</p>
+
+<section class="menu-add">
+  <h3>Add new coffee</h3>
+  <div class="menu-add_form">
+  <form [formGroup]="menuAddForm" class="p-3" action="">
+    
+
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>name</mat-label>
+        <input formControlName="title" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>image</mat-label>
+        <input formControlName="img1" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>image 2</mat-label>
+        <input formControlName="img2" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>image 3</mat-label>
+        <input formControlName="img3" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>price</mat-label>
+        <input formControlName="price" type="number" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>label</mat-label>
+        <input formControlName="label" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <div class="m-2">
+      <mat-form-field appearance="fill">
+        <mat-label>article</mat-label>
+        <input formControlName="article" type="text" matInput>
+      </mat-form-field>
+    </div>
+
+
+
+    <button (click)="addCoffee(menuAddForm.value)" class="add" type="submit">ADD+</button>
+  </form>
+</div>
+</section>
+
+// img1: string,
+// img2: string,
+// img3: string,
+// title:string,
+// price:number,
+// label:string,
+// article:string,

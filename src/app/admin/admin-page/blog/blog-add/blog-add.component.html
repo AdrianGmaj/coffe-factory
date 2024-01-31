@@ -1,3 +1,44 @@
-<p>
-  blog-add works!
-</p>
+<section class="menu-add">
+  <h3>Add new article</h3>
+  <div class="menu-add_form">
+    <form [formGroup]="blogAddForm" class="p-3" action="">
+
+
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>title</mat-label>
+          <input formControlName="title" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>image</mat-label>
+          <input formControlName="img" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>description </mat-label>
+          <input formControlName="para" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label> article</mat-label>
+          <input formControlName="article" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>date</mat-label>
+          <input formControlName="date" type="text" matInput>
+        </mat-form-field>
+      </div>
+
+
+
+      <button (click)="addArticle(blogAddForm.value)" class="add" type="submit">ADD+</button>
+    </form>
+  </div>
+</section>
+

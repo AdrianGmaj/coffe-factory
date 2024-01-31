@@ -1,6 +1,6 @@
-.shop-add{
+.menu-add {
     padding: 6vh 6vw;
-    height: 80vh;
+    height: max-content;
     width: 80vw;
     // background-color: #f2efe6;
     font-family: 'Asul', serif;
@@ -8,32 +8,35 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-h3{
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2rem;
-}
-    &_form{
+
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    &_form {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-self: center;
         padding: 4vh 4vw;
 
-        form{
+        form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
     }
-    .add{
+
+    .add {
         border: none;
         background-color: none;
-    
+
         background-color: #be9c79;
         cursor: pointer;
-        width:7rem;
-       min-height: fit-content;
+        width: 7rem;
+        min-height: fit-content;
         align-self: center;
         font-family: 'Asul', serif;
         font-size: 1.4rem;

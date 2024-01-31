@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BlogArticle } from './blog-article';
+import {  BlogArticleResponse } from './blog-article';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  blog:Array<BlogArticle> = [
+  blog:Array<BlogArticleResponse> = [
     {
       id: 1,
       title: "How Our Beloved Café Came to Life",
@@ -64,9 +66,33 @@ export class BlogService {
       `
     },
   ]
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getBlog(){
     return this.blog
   }
+
+  getArticles(): Observable<Array<BlogArticleResponse>> {
+    return this.http.get<Array<BlogArticleResponse>>('/api/articles')
+  }
+
+  addArticles(value: Article): Observable<BlogArticleResponse> {
+    return this.http.post<BlogArticleResponse>('/api/articles', value)
+  }
+
+  deleteArticles(id):Observable<BlogArticleResponse>{
+    return this.http.delete<BlogArticleResponse>(`/api/articles/${id}`)
+  }
+
+  editArticles(id:number, value:Article){
+    return this.http.patch<BlogArticleResponse>(`/api/articles/${id}`, value)
+  }
+}
+export interface Article {
+
+  title: string,
+  para: string,
+  article:string,
+  date: string,
+  img: string
 }

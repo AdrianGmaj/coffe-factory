@@ -35,7 +35,7 @@ export class ShopListComponent implements OnInit {
   addDialog() {
     this.dialog.open(ShopAddComponent)
       .afterClosed().subscribe(() => {
-        console.log('djalog jest zamkniety')
+        console.log('dialog jest zamkniety')
         this.products$ = this.shopService.getProducts()
       })
   }

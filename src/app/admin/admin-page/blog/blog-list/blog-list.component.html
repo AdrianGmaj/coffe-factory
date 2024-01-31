@@ -1,8 +1,8 @@
 <section class="blog-list">
   <div class="container">
     <h3>articles</h3>
-
-    <table mat-table [dataSource]="blog" class="mat-elevation-z8">
+    <button (click)="addDialog()" class="add">+</button>
+    <table mat-table [dataSource]="Articles$" class="mat-elevation-z8">
       <ng-container matColumnDef="title">
            <th mat-header-cell *matHeaderCellDef> title </th>
            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
@@ -20,8 +20,8 @@
            <th mat-header-cell *matHeaderCellDef> actions </th>
            <td class="actions" mat-cell *matCellDef="let element">
             <span class="buttons">
-             <button class="edit" routerLink="/admin/categories/edit/{{element.id}}">edit</button>
-             <button  class="delete" mat-button color="warn">delete</button></span>
+             <button class="edit" (click)="editArticle(element)">edit</button>
+             <button  class="delete" (click)="delete(element.id)">delete</button></span>
            </td>
          </ng-container>
      

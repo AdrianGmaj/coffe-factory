@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ProductResponse } from 'src/app/services/ProductResponse';
+import { ShopService } from 'src/app/services/shop.service';
 
 @Component({
   selector: 'app-shop-edit',
@@ -12,7 +13,8 @@ export class ShopEditComponent implements OnInit {
 productEditForm: FormGroup
 
   constructor(private dialogRef: MatDialogRef<ShopEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ProductResponse) { }
+    @Inject(MAT_DIALOG_DATA) public data: ProductResponse,
+    private shopService: ShopService) { }
 
   ngOnInit() {
     console.log(this.data)
@@ -28,5 +30,9 @@ productEditForm: FormGroup
 
   }
 
-
+  editArticle(id, value){
+    this.shopService.editProduct(id, value).subscribe((response)=>{
+    this.dialogRef.close
+    })
+}
 }
