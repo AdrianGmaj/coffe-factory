@@ -1,0 +1,32 @@
+<section class="opinion-edit">
+  <i (click)="close()" class="fa-regular fa-circle-xmark"></i>
+  <h3>Add new article</h3>
+  <div class="menu-add_form">
+    <form [formGroup]="opinionEditForm" class="p-3" action="">
+
+
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>name</mat-label>
+          <input formControlName="name" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>opinion</mat-label>
+          <input formControlName="img" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>active </mat-label>
+          <input formControlName="active" type="text" matInput>
+        </mat-form-field>
+      </div>
+
+
+
+      <button  class="add" type="submit">EDIT+</button>
+    </form>
+  </div>
+</section>

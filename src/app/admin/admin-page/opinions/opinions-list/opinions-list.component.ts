@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Opinion } from 'src/app/services/opinion';
 import { OpinionResponse, OpinionService } from 'src/app/services/opinion.service';
+import { OpinionsEditComponent } from '../opinions-edit/opinions-edit.component';
 
 @Component({
   selector: 'app-opinions-list',
@@ -18,15 +20,20 @@ export class OpinionsListComponent implements OnInit {
     'actions'
 
   ]
-  constructor(private opinionsService: OpinionService) { }
+  constructor(private opinionsService: OpinionService, private dialog: MatDialog) { }
 
   ngOnInit() {
      this.opinions$ = this.opinionsService.getOpinions()
   }
-editOpinion(value){
-
+editOpinion(element){
+  this.dialog.open(OpinionsEditComponent, {
+    data: element
+  })
 }
 deleteOpinion(id){
+  this.opinionsService.deleteOpinion(id).subscribe(()=>{
+    this.opinions$ = this.opinionsService.getOpinions()
+  })
 
 }
 }

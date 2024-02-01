@@ -62,15 +62,23 @@ export class ShopService {
     return this.http.get<Array<ProductResponse>>('/api/products')
   }
 
+
+
+  getProductById(id: string): Observable<Array<ProductResponse>> {
+    return this.http.get<Array<ProductResponse>>(`/api/products/${id}`);
+  }
+
+
+
   addProduct(value: Product): Observable<ProductResponse> {
     return this.http.post<ProductResponse>('/api/products', value)
   }
 
-  deleteProduct(id):Observable<ProductResponse>{
+  deleteProduct(id): Observable<ProductResponse> {
     return this.http.delete<ProductResponse>(`/api/products/${id}`)
   }
 
-  editProduct(id:number, value:Product){
+  editProduct(id: number, value: Product) {
     return this.http.patch<ProductResponse>(`/api/products/${id}`, value)
   }
 }

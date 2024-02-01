@@ -4,7 +4,7 @@ import { Product } from 'src/app/services/product';
 import { ShopService } from 'src/app/services/shop.service';
 import { DialogComponent } from './dialog/dialog.component';
 import { BasketService } from 'src/app/services/basket.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -13,9 +13,9 @@ import { Observable } from 'rxjs';
 })
 export class ShopComponent implements OnInit {
   shop: Array<Product>
-  shop$:Observable<Array<Product>>
-  basket: Array<Product>
-  product: Product
+  shop$: Observable<Array<Product>>
+  basket: Array<Product>;
+
   constructor(private shopService: ShopService,
     private dialog: MatDialog,
     private basketService: BasketService) { }
@@ -25,13 +25,45 @@ export class ShopComponent implements OnInit {
     this.shop$ = this.shopService.getProducts()
 
   }
-  showDetails(id) {
-    this.product = this.shop.find((product) => product.id == id)
-    console.log(this.product)
+
+
+
+  showDetails(product: Product) {
+    console.log(product)
     this.dialog.open(DialogComponent, {
-      data: this.product
-    })
+      data: product
+    });
   }
+
+
+  /**
+    
+      showDetails(id) {
+        this.shopService.getProductById(id)
+          .subscribe((product) => {
+            console.log(product)
+            this.dialog.open(DialogComponent, {
+              data: product
+            });
+          })
+      }
+  */
+
+  /** 
+    showDetails(id) {
+      this.shopService.getProducts()
+        .pipe(
+          map((products) => products.find(product => product.id === id))
+        )
+        .subscribe((product) => {
+          console.log(product)
+          this.dialog.open(DialogComponent, {
+            data: product
+          });
+        })
+    }
+  **/
+
   buy(product) {
     this.basketService.addToBasket(product)
   }

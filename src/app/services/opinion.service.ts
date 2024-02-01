@@ -22,6 +22,9 @@ return this.http.post<Opinion>('/api/opinions', opinion)
     return this.http.get<Array<OpinionResponse>>('/api/opinions')
   }
 
+  deleteOpinion(id):Observable<OpinionResponse>{
+    return this.http.delete<OpinionResponse>(`/api/opinions/${id}`)
+  }
 }
 
 
