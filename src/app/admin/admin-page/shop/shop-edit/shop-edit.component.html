@@ -1,4 +1,5 @@
 <section class="shop-add">
+  <i (click)="close()" class="fa-regular fa-circle-xmark"></i>
   <h3>Edit product</h3>
   <div class="shop-add_form">
     <form [formGroup]="productEditForm" class="p-3" action="">
@@ -31,7 +32,7 @@
 
 
 
-      <button type="submit">EDIT</button>
+      <button class="add" type="submit">EDIT +</button>
     </form>
   </div>
 </section>

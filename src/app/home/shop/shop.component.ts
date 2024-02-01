@@ -4,6 +4,7 @@ import { Product } from 'src/app/services/product';
 import { ShopService } from 'src/app/services/shop.service';
 import { DialogComponent } from './dialog/dialog.component';
 import { BasketService } from 'src/app/services/basket.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -12,6 +13,7 @@ import { BasketService } from 'src/app/services/basket.service';
 })
 export class ShopComponent implements OnInit {
   shop: Array<Product>
+  shop$:Observable<Array<Product>>
   basket: Array<Product>
   product: Product
   constructor(private shopService: ShopService,
@@ -20,6 +22,7 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
     this.shop = this.shopService.getShop();
+    this.shop$ = this.shopService.getProducts()
 
   }
   showDetails(id) {

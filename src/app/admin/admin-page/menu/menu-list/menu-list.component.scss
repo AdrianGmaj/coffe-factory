@@ -22,11 +22,16 @@
         .add:hover{
             scale:110%;
         }
-h3{
-    font-size: calc(1rem + 1.5vw);
-    font-family: 'Asul', serif;
-    padding: 1rem;
-}
+
+    h3 {
+        font-size: calc(1rem + 1.5vw);
+        font-family: 'Asul', serif;
+        padding: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    
+    }
+
     img{
         height: 5rem;
         width: 5rem;
@@ -37,5 +42,20 @@ h3{
         flex-direction: column;
         gap: 0.2rem;
         height: 100%;
+
+        .edit{
+            background: none;
+            border: none;
+            background-color: #be9c79;
+            cursor: pointer;
+        }
+        .delete{
+            background: none;
+            border: none;
+            background-color: #a7342e;
+            cursor: pointer;
+            color: white;
+            cursor: pointer;
+        }
     }
 }

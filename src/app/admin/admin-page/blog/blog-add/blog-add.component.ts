@@ -35,7 +35,12 @@ export class BlogAddComponent implements OnInit {
     this.blogService.addArticles(value).subscribe(response=>{
       this.dialogRef.close()
   }
-)}}
+)}
+
+close(){
+  this.dialogRef.close()
+}
+}
 // id: number,
 // title: string,
 // para: string,

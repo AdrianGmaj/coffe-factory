@@ -39,6 +39,9 @@ export class MenuAddComponent implements OnInit {
 this.dialogRef.close()
     })
   }
+  close(){
+    this.dialogRef.close()
+  }
 }
 // img1: string,
 // img2: string,

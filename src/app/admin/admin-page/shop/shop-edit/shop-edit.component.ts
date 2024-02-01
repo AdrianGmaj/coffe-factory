@@ -35,4 +35,8 @@ productEditForm: FormGroup
     this.dialogRef.close
     })
 }
+close(){
+  this.dialogRef.close()
+}
+
 }

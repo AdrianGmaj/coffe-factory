@@ -1,4 +1,5 @@
 <section class="menu-add">
+  <i (click)="close()" class="fa-regular fa-circle-xmark"></i>
   <h3>Add new article</h3>
   <div class="menu-add_form">
     <form [formGroup]="blogAddForm" class="p-3" action="">
@@ -37,7 +38,7 @@
 
 
 
-      <button (click)="editArticle(data.id, blogAddForm.value)" class="add" type="submit">ADD+</button>
+      <button (click)="editArticle(data.id, blogAddForm.value)" class="add" type="submit">EDIT+</button>
     </form>
   </div>
 </section>

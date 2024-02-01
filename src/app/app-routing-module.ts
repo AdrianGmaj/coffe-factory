@@ -25,14 +25,15 @@ const routes: Routes = [
     path: 'about-us',
     component: AboutUsComponent
   },
-  {
-    path: 'admin',
-    component: AdminPageComponent
-  },
+
   {
     path: 'log-in',
     component: LogInComponent
-  }
+  },
+  {
+    path: 'admin',
+    component: AdminPageComponent,canActivate: [AdminGuardService],
+  },
 
 ];
 

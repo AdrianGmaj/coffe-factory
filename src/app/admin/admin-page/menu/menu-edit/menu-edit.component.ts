@@ -43,4 +43,7 @@ export class MenuEditComponent implements OnInit {
     this.dialogRef.close
     })
 }
+close(){
+  this.dialogRef.close()
+}
 }

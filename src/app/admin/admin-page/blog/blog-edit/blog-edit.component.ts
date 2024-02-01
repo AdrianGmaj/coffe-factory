@@ -37,4 +37,8 @@ this.blogService.editArticles(id, value).subscribe((response)=>{
 this.dialogRef.close
 })
 }
+
+close(){
+  this.dialogRef.close()
+}
 }

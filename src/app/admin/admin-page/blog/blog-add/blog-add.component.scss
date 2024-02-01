@@ -8,7 +8,14 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
+    i{
+        position: absolute;
+        top:0;
+        right:0;
+        padding: 2rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
     h3 {
         text-align: center;
         text-transform: uppercase;

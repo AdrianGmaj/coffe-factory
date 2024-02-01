@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'admin', component: AdminPageComponent,
     children: [
       {
+        path: '',
+        loadChildren: () => import('./admin-page/menu/menu.module').then(m => m.MenuModule)
+      },
+      {
         path: 'menu',
         loadChildren: () => import('./admin-page/menu/menu.module').then(m => m.MenuModule)
       },

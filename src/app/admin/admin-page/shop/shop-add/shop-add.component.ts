@@ -36,6 +36,10 @@ export class ShopAddComponent implements OnInit {
 this.dialogRef.close()
     })
   }
+
+  close(){
+    this.dialogRef.close()
+  }
 }
 // id: number,
 // img:string;
