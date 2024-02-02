@@ -25,10 +25,15 @@ return this.http.post<Opinion>('/api/opinions', opinion)
   deleteOpinion(id):Observable<OpinionResponse>{
     return this.http.delete<OpinionResponse>(`/api/opinions/${id}`)
   }
+
+  editProduct(id: number, value: Opinion) {
+    return this.http.patch<OpinionResponse>(`/api/opinions/${id}`, value)
+  }
 }
 
 
 export interface OpinionResponse {
+  id:number;
   opinion: string;
   name: string;
   active: boolean;

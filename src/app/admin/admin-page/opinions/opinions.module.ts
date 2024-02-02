@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { OpinionsRoutingModule } from './opinions-routing.module';
 import { OpinionsListComponent } from './opinions-list/opinions-list.component';
 import { OpinionsEditComponent } from './opinions-edit/opinions-edit.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { OpinionsEditComponent } from './opinions-edit/opinions-edit.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ]
 })
 export class OpinionsModule { }

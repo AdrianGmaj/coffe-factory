@@ -5,6 +5,7 @@
     background-repeat: repeat;
     background-position: center;
     background-size: cover;
+   
 
     .add {
         background: none;
@@ -63,5 +64,11 @@
             color: white;
             cursor: pointer;
         }
+    }
+}
+@media screen and (max-width: 700px){
+    .blog-list{
+        padding: 1vh;
+        justify-self: center;
     }
 }

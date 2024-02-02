@@ -13,6 +13,7 @@
         flex-direction: column;
         font-family: 'Asul', serif;
         height: 100%;
+        grid-row: 1/3;
       
 
         h3 {
@@ -50,7 +51,56 @@
 
 &-content{
 grid-column: 2/3;
+grid-row: 1/3;
     overflow-y: auto;
     overflow-x: auto;
 }
+mat-expansion-panel {
+    background-color: #f2efe6;
+    font-family: 'Asul', serif;
+    position: fixed;
+    width: 100%;
+}
+.nav-list-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 3rem 3rem;
+    font-family: 'Asul', serif;
+
+    li {
+        font-size: 1.5rem;
+        cursor: pointer;
+
+
+    }
+}
+
+button {
+    background-color: black;
+    color: white;
+    height: 2rem;
+    width: 100%;
+    cursor: pointer;
+}
+.active{
+    border-bottom: 1px solid black;
+}
+}
+@media screen and (min-width: 701px){
+    mat-expansion-panel {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px){
+    .admin{
+       display: flex;
+       flex-direction: column;
+       &-nav{
+        display: none;
+       }
+    }
+
 }

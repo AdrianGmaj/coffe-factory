@@ -14,19 +14,18 @@
       <div class="m-2">
         <mat-form-field appearance="fill">
           <mat-label>opinion</mat-label>
-          <input formControlName="img" type="text" matInput>
+          <input formControlName="opinion" type="text" matInput>
         </mat-form-field>
       </div>
       <div class="m-2">
-        <mat-form-field appearance="fill">
-          <mat-label>active </mat-label>
-          <input formControlName="active" type="text" matInput>
-        </mat-form-field>
+
+        <mat-checkbox formControlName="active"> active </mat-checkbox>
+
       </div>
 
 
 
-      <button  class="add" type="submit">EDIT+</button>
+      <button (click)=" editOpinion(data.id, opinionEditForm.value)" class="add" type="submit">EDIT+</button>
     </form>
   </div>
 </section>

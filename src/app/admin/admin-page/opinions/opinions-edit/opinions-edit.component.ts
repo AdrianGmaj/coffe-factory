@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { OpinionResponse } from 'src/app/services/opinion.service';
+import { OpinionResponse, OpinionService } from 'src/app/services/opinion.service';
 
 
 @Component({
@@ -13,11 +13,11 @@ export class OpinionsEditComponent implements OnInit {
 
   opinionEditForm = new FormGroup({
 
-    title: new FormControl(this.data.name,
+    name: new FormControl(this.data.name,
       [Validators.required]),
-    img: new FormControl(this.data.opinion,
+    opinion: new FormControl(this.data.opinion,
       [Validators.required]),
-    para: new FormControl(this.data.active,
+    active: new FormControl(this.data.active,
       [Validators.required]),
 
  
@@ -26,11 +26,19 @@ export class OpinionsEditComponent implements OnInit {
   })
 
   constructor(private dialogRef: MatDialogRef<OpinionResponse>,
-    @Inject(MAT_DIALOG_DATA) public data: OpinionResponse,) { }
+    @Inject(MAT_DIALOG_DATA) public data: OpinionResponse,
+    private opinionService: OpinionService) { }
 
   ngOnInit() {
   }
 close(){
   this.dialogRef.close()
+}
+
+editOpinion(id,value){
+this.opinionService.editProduct(id, value).subscribe(()=>{
+  this.dialogRef.close()
+})
+
 }
 }

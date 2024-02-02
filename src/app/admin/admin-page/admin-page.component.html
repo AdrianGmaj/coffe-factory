@@ -9,6 +9,27 @@
     </ul>
     <button (click)="logOut()">log out</button>
   </div>
+
+  <!-- admin nav mobile -->
+  <div class="admin-nav-mobile">
+    <mat-expansion-panel >
+<mat-expansion-panel-header>
+<mat-panel-title>
+  <h3>admin page <i class="fa-solid fa-user"></i> </h3>
+</mat-panel-title>
+
+</mat-expansion-panel-header>
+<ul class="nav-list-mobile">
+  <li routerLink="menu" routerLinkActive="active">menu</li>
+  <li routerLink="blog" routerLinkActive="active">blog</li>
+  <li routerLink="shop" routerLinkActive="active">shop</li>
+  <li routerLink="opinions" routerLinkActive="active">opinions</li>
+</ul>
+<button (click)="logOut()">log out</button>
+</mat-expansion-panel>
+   
+  </div>
+
   <div class="admin-content">
     <router-outlet></router-outlet>
   </div>
