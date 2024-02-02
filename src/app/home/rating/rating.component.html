@@ -28,28 +28,24 @@
       <input placeholder="share your opinion" class="opinion" formControlName="opinion">
       <input placeholder="name" class="name" formControlName="name">
       <div class="card">
-        <h3> Star Rating</h3>
-        <br />
-        <span (click)="gfg(1)"
-              class="star">★
-        </span>
-        <span (click)="gfg(2)"
-              class="star">★
-        </span>
-        <span (click)="gfg(3)"
-              class="star">★
-        </span>
-        <span (click)="gfg(4)"
-              class="star">★
-        </span>
-        <span (click)="gfg(5)"
-              class="star">★
-        </span>
-     
-    </div>
+        <h5>rate us</h5>
+        <div class="stars">
+          <span (click)="gfg(1)" class="star">★
+          </span>
+          <span (click)="gfg(2)" class="star">★
+          </span>
+          <span (click)="gfg(3)" class="star">★
+          </span>
+          <span (click)="gfg(4)" class="star">★
+          </span>
+          <span (click)="gfg(5)" class="star">★
+          </span>
+        </div>
+
+
+      </div>
 
       <button (click)="opinionAdd(ratingAddForm.getRawValue())" type="submit">ADD</button>
     </form>
   </div>
 </section>
-

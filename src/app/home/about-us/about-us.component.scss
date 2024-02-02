@@ -76,6 +76,7 @@
                     text-decoration: none;
                     background-color: #006a4e;
                     font-size: 18px;
+                    width: 20px;
                     border-radius: 5px;
                     padding: 1rem;
 
@@ -92,9 +93,23 @@
 }
 
 @media screen and (max-width: 700px){
+    .about-us{
+        padding: 4vh 4vw;
+    }
     .about-us_container-content{
 display: flex;
 flex-direction: column;
+padding: 2vh 2vw;
 
     }
+    .about-us_container{
+        padding: 1vw;
+    }
+    .about-us_container-content-txt{
+        p{
+            font-size: calc(1rem + 0.4vw);
+        }
+
+    }
+ 
 }
