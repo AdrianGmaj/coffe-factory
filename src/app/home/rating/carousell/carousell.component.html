@@ -4,6 +4,7 @@
     <div *ngFor=" let opinion of opinions | async ; let firstOpinion = first"[class.active]="firstOpinion" class="carousel-item" data-bs-interval="2000">
       <div *ngIf="opinion.active" class="opinion">  <h4>"{{opinion.opinion}}"</h4>
         <p class="para"><i class="fa-solid fa-user"></i>{{opinion.name}}</p></div>
+        <p class="stars">{{opinion.stars}}</p>
    
     </div>
 

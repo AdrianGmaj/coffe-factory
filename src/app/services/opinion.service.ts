@@ -37,4 +37,5 @@ export interface OpinionResponse {
   opinion: string;
   name: string;
   active: boolean;
+  stars:string;
 }

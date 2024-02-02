@@ -47,5 +47,7 @@
 
       <button (click)="opinionAdd(ratingAddForm.getRawValue())" type="submit">ADD</button>
     </form>
+
+    <div>{{ratingAddForm.value | json}}</div>
   </div>
 </section>
