@@ -1,17 +1,17 @@
 <div class="toolbar"></div>
 <section class="menu-coffee">
  
-  <div class="container" *ngFor="let coff of coffee">
+  <div class="container" *ngFor="let coff of coffee$ |async">
 
     <div class="gallery">
       <div class="gallery-main">
-        <img class="gallery-main_img" src="{{coff.img1}}" alt="">
+        <img #selectedImg class="gallery-main_img" src="{{coff.img1}}" alt="">
       </div>
 
       <div class="gallery-list">
-        <div class="gallery-list_item"> <img class="gallery-list_item-img" src="{{coff.img1}}" alt=""></div>
-        <div class="gallery-list_item"> <img class="gallery-list_item-img" src="{{coff.img2}}" alt=""></div>
-        <div class="gallery-list_item"> <img class="gallery-list_item-img" src="{{coff.img3}}" alt=""></div>
+        <div class="gallery-list_item"> <img (click)="selectedImg.src = coff.img1" class="gallery-list_item-img" src="{{coff.img1}}" alt=""></div>
+        <div class="gallery-list_item"> <img (click)="selectedImg.src = coff.img2" class="gallery-list_item-img" src="{{coff.img2}}" alt=""></div>
+        <div class="gallery-list_item"> <img (click)="selectedImg.src = coff.img3" class="gallery-list_item-img" src="{{coff.img3}}" alt=""></div>
 
 
 
@@ -21,7 +21,7 @@
       <h3>{{coff.title}}</h3>
       <h4>{{coff.price | currency}}</h4>
       <p>{{coff.article}}</p>
-      <a href="">back to menu</a>
+      <a routerLink="" fragment="menu" >back to menu</a>
     </div>
 
   </div>

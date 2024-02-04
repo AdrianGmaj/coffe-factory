@@ -21,7 +21,7 @@ export class DialogSearchComponent implements OnInit {
   ngOnInit() {
   }
   showCoffee() {
-    this.filteredData = this.data.filter((coffee) => coffee.title.includes(this.inputValue))
+    this.filteredData = this.data.filter((coffee) => coffee.title.toLowerCase().includes(this.inputValue.toLowerCase()))
   }
   choose(id) {
     this.router.navigateByUrl(`/menu-coffee/${id}`)

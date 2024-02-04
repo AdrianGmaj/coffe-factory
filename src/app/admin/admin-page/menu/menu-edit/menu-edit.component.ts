@@ -14,36 +14,36 @@ export class MenuEditComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<MenuEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: MenuResponse,
-    private menuService:MenuService) { }
+    private menuService: MenuService) { }
 
   ngOnInit() {
     this.menuEditForm = new FormGroup({
 
-      title: new FormControl('',
-      [Validators.required]),
-    img1: new FormControl('',
-      [Validators.required]),
-    img2: new FormControl('',
-      [Validators.required]),
-    img3: new FormControl('',
-      [Validators.required]),
-    price: new FormControl('',
-      [Validators.required]),
-    label: new FormControl('',
-      [Validators.required]),
-    article: new FormControl('',
-      [Validators.required]),
+      title: new FormControl(this.data.title,
+        [Validators.required]),
+      img1: new FormControl(this.data.img1,
+        [Validators.required]),
+      img2: new FormControl(this.data.img2,
+        [Validators.required]),
+      img3: new FormControl(this.data.img3,
+        [Validators.required]),
+      price: new FormControl(this.data.price,
+        [Validators.required]),
+      label: new FormControl(this.data.label,
+        [Validators.required]),
+      article: new FormControl(this.data.article,
+        [Validators.required]),
 
-  
+
     })
 
   }
-  editArticle(id, value){
-    this.menuService.editProduct(id, value).subscribe((response)=>{
-    this.dialogRef.close
+  editArticle(id, value) {
+    this.menuService.editProduct(id, value).subscribe((response) => {
+      this.dialogRef.close()
     })
-}
-close(){
-  this.dialogRef.close()
-}
+  }
+  close() {
+    this.dialogRef.close()
+  }
 }

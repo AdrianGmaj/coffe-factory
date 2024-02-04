@@ -13,6 +13,7 @@ export class AdminPageComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.router.navigateByUrl('admin/menu')
   }
   logOut(){
     this.auth.signOut().subscribe(()=>{
