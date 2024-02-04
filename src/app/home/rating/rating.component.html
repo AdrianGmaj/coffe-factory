@@ -19,7 +19,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div> -->
-    <app-carousell [opinions]="opinions"></app-carousell>
+    <app-carousell [opinions]="opinions$"></app-carousell>
   </div>
   <div class="rating-form">
     <h3>yours opinion</h3>
@@ -27,8 +27,26 @@
     <form [formGroup]="ratingAddForm">
       <input placeholder="share your opinion" class="opinion" formControlName="opinion">
       <input placeholder="name" class="name" formControlName="name">
+      <div class="card">
+        <h5>rate us</h5>
+        <div class="stars">
+          <span (click)="gfg(1)" class="star">★
+          </span>
+          <span (click)="gfg(2)" class="star">★
+          </span>
+          <span (click)="gfg(3)" class="star">★
+          </span>
+          <span (click)="gfg(4)" class="star">★
+          </span>
+          <span (click)="gfg(5)" class="star">★
+          </span>
+        </div>
+
+
+      </div>
+
       <button (click)="opinionAdd(ratingAddForm.getRawValue())" type="submit">ADD</button>
     </form>
+
   </div>
 </section>
-

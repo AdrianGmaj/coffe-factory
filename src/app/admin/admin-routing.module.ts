@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'admin', component: AdminPageComponent,
     children: [
       {
+        path: '',
+        loadChildren: () => import('./admin-page/menu/menu.module').then(m => m.MenuModule)
+      },
+      {
         path: 'menu',
         loadChildren: () => import('./admin-page/menu/menu.module').then(m => m.MenuModule)
       },
@@ -18,6 +22,10 @@ const routes: Routes = [
         path: 'shop',
         loadChildren: () => import('./admin-page/shop/shop.module').then(m => m.ShopModule)
       },
+      {
+        path: 'opinions',
+        loadChildren: () => import('./admin-page/opinions/opinions.module').then(m => m.OpinionsModule)
+      }
     ]
   }
 ];

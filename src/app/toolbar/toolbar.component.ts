@@ -21,6 +21,7 @@ export class ToolbarComponent implements OnInit {
   coffeeMenu: Array<CoffeeMenu> = []
   buyBasket = false;
 
+
   constructor(private router: Router,
     private basketService: BasketService,
     private dialog: MatDialog,
@@ -33,14 +34,14 @@ export class ToolbarComponent implements OnInit {
     nameAndSurname: new FormControl('',
       [Validators.required]),
     phone: new FormControl('',
-      [Validators.required]
+      [Validators.required,]
     ),
     address: new FormControl('',
       [Validators.required]),
     cardNumber: new FormControl('',
       [Validators.required]),
     month: new FormControl('',
-      [Validators.required]),
+      [Validators.required, Validators.minLength(7)]),
 
     year: new FormControl('',
       [Validators.required]),
@@ -111,6 +112,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   buyFormSubmit(formValue) {
+
     this.basket.length = 0;
     this.basketOpened = false;
     this.buyBasket = false

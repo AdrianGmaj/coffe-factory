@@ -16,10 +16,11 @@
 
             font-size: calc(1rem + 2vw);
             color: black;
-            padding: 5vh 2vw;
+            padding: 2vh 2vw;
             text-transform: uppercase;
         }
-        .p-header{
+
+        .p-header {
             font-size: 1.2rem;
             padding: 1vh 1vw;
         }
@@ -35,33 +36,49 @@
             padding: 15vh;
 
             .card {
-                height: 29rem;
-                max-width: 29rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                border: #be9c79 solid 2px;
+                border-top-right-radius: 20%;
+                border-top-left-radius: 20%;
+
+                height: 30rem;
+                min-height: fit-content;
+                width: 22rem;
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // align-items: center;
+                display: grid;
+                grid-template-rows: 20rem 6rem 4rem;
                 align-items: center;
-                gap: 2vw;
+                overflow: hidden;
+
 
                 &-img .img {
 
 
                     height: 20rem;
-                    width: 20rem;
+                    width: 352px;
                     object-fit: cover;
+                    object-position: center;
+
                 }
 
                 &-text {
                     width: fit-content;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    justify-content: center;
+                    align-items: center;
+                    width: 352px;
                     gap: 1vh;
+                    padding: 2vh;
+
 
                     h4 {
                         text-transform: uppercase;
                         font-size: 1rem;
                         padding-top: 2vh;
+                        text-align: center;
 
 
                     }
@@ -73,41 +90,81 @@
                 }
 
                 &-buttons {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
+                    width: 352px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    background-color: #be9c79;
 
                     button {
                         text-decoration: none;
                         border: none;
-                        width: 30%;
-                        background-color: #006a4e;
-                        font-size: 12px;
-                        border-radius: 5px;
-                        padding: 1rem;
+                        width: 100%;
+                        height: 4rem;
+                        background-color: #be9c79;
+                        font-size: 1rem;
 
+
+                        font-family: 'Asul', serif;
                         color: white;
-                     ;
-                        align-self: center;
+                        ;
+                        text-align: center;
+                        vertical-align: middle;
+                        color: white;
+                        line-height: 1.2;
                         cursor: pointer;
+                        transition: all 1s ease-in-out;
+                    }
+
+                    button:hover {
+                        background-color: #d8b189;
+                    }
+
+                    .buy {
+                        border-left: 2px dotted #f2efe6;
+
                     }
                 }
             }
 
+            .card2 {
+                height: 32rem;
+                width: 24rem;
+                border: #be9c79 2px solid;
+                border-top-right-radius: 20%;
+                border-top-left-radius: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-
+            // .card3 {
+            //     height: 38rem;
+            //     width: 33rem;
+            //     border: #be9c79 2px solid;
+            //     border-top-right-radius: 20%;
+            //     border-top-left-radius: 20%;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            // }
         }
     }
 }
+
 @media screen and (max-width: 700px) {
-    .shop-container{
+    .shop {
+        padding: 1vh 1vw;
 
     }
-.shop-container_products{
-    row-gap:30vw;
-}
-.card{
 
-}
+    .shop-container {}
+
+    .shop-container_products {
+        row-gap: 30vw;
+        padding: 2vh;
     }
+
+    .card {
+        width: 30rem;
+    }
+}

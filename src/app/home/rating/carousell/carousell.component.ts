@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Opinion } from 'src/app/services/opinion';
+import { Observable } from 'rxjs';
+
+import { OpinionResponse } from 'src/app/services/opinion.service';
 
 @Component({
   selector: 'app-carousell',
@@ -8,7 +10,7 @@ import { Opinion } from 'src/app/services/opinion';
 })
 export class CarousellComponent implements OnInit {
   @Input()
-  opinions: Array<Opinion>
+  opinions:Observable< Array<OpinionResponse>>
   constructor() { }
 
   ngOnInit() {

@@ -16,6 +16,7 @@
         <li routerLinkActive="active" routerLink="" fragment="services">services</li>
         <li routerLinkActive="active" routerLink="" fragment="menu">menu</li>
         <li routerLinkActive="active" routerLink="" fragment="blog">blog</li>
+        <li routerLinkActive="active" routerLink="" fragment="shop">shop</li>
         <li routerLinkActive="active" routerLink="" fragment="opinions">opinions</li>
 
       </ul>
@@ -40,6 +41,9 @@
     <span *ngIf="!buyBasket">
       <i (click)="basketOpened = false" class="fa-regular fa-circle-xmark"></i>
       <h2>your basket</h2>
+
+
+      <h3 *ngIf="basket.length == 0 "> choose something from shop</h3>
       <div class="products">
         <div *ngFor="let item of basket" class="products-card">
           <img src="{{item.product.img}}" alt="">
@@ -69,8 +73,8 @@
 
       </div>
       <div class="buttons">
-        <button (click)="openBuy()" class="buy">buy</button>
-        <button (click)="basketOpened = false" class="shop">back to shop</button>
+        <button *ngIf="basket.length !== 0" (click)="openBuy()" class="buy">buy</button>
+        <button routerLink="" fragment="shop" (click)="basketOpened = false" class="shop">back to shop</button>
         <span *ngIf="basket" class="total">total:{{basketTotal() | currency}}
 
         </span>
@@ -128,8 +132,10 @@
               <input formControlName="cvv" type="number" matInput>
             </mat-form-field>
           </div>
+        
         </div>
-        <button (click)="buyFormSubmit(buyForm.value)" class="submit" type="submit">submit</button>
+        
+        <button [disabled]="!buyForm.valid" (click)="buyFormSubmit(buyForm.value)" class="submit" type="submit">submit</button>
       </form>
     </span>
   </div>

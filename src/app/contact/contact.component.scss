@@ -1,7 +1,7 @@
 .contact {
     width: 100%;
-    
-   height: min-content;
+
+    height: min-content;
     background-color: #101311;
 
     border-top: 2px solid grey;
@@ -71,26 +71,36 @@
             }
         }
     }
-    @media screen and (max-width: 700px){
-        .contact-list{
-    display: flex;
-    flex-direction: column;
-   justify-content: center;
-   align-items: center;
-    gap: 2vw;
 
-    .item{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap:1vw;
-        h4{
-            text-align: center;
+    @media screen and (max-width: 700px) {
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1vw;
+
+                h4 {
+                    text-align: center;
+                    font-size: 0.5rem;
+                }
+                p{
+                    font-size: 0.4rem;
+                }
+                i{
+                    font-size: 0.8rem;
+                }
+                
+            }
         }
-    }
-        }
-    
+
     }
 
 }

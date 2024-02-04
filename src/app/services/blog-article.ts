@@ -1,4 +1,4 @@
-export interface BlogArticle {
+export interface BlogArticleResponse {
     id: number,
     title: string,
     para: string,

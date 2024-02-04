@@ -11,5 +11,7 @@ export class NewsletterComponent implements OnInit {
 
   ngOnInit() {
   }
-
+subscribe(){
+  alert('thanks for subscribe')
+}
 }

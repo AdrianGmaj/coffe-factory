@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
   observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log(entry.target.tagName)
       if (entry.isIntersecting) {
         entry.target.classList.add('show')
       }// else {
@@ -25,12 +24,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((element)=> this.observer.observe(element))
-    console.log(hiddenElements)
   }
   ngAfterViewInit(): void {
     this.route.fragment.subscribe(fragment => {
       this.viewportScroller.scrollToAnchor(fragment)
-      console.log('my tu som:',fragment)
     }
     )
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogArticle } from 'src/app/services/blog-article';
+import { Observable } from 'rxjs';
+import { BlogArticleResponse } from 'src/app/services/blog-article';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
@@ -8,11 +9,13 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-blogArticles:Array<BlogArticle>
+blogArticles:Array<BlogArticleResponse>
+blogArticles$:Observable<Array<BlogArticleResponse>>
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    this.blogArticles = this.blogService.getBlog()
+    this.blogArticles = this.blogService.getBlog();
+    this.blogArticles$ = this.blogService.getArticles()
   }
 
 }

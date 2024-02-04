@@ -1,0 +1,54 @@
+.opinion-edit{
+    padding: 6vh 6vw;
+    height: max-content;
+    width: 80vw;
+    background-image: url("/assets/dialog/dialog-background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Asul', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        position: absolute;
+        top:0;
+        right:0;
+        padding: 2rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+    &_form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        padding: 4vh 4vw;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+ 
+    }
+    button {
+        border: none;
+        background-color: none;
+
+        background-color: #be9c79;
+        cursor: pointer;
+        width: 7rem;
+        min-height: fit-content;
+        align-self: center;
+        font-family: 'Asul', serif;
+        font-size: 1.4rem;
+
+
+    }
+}

@@ -9,13 +9,15 @@
         background-image: url('/assets/home/rating/background.svg');
         background-position: center;
         background-size: cover;
-        display: flex
-        ;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
-     
+      
+
+app-carousell{
+
+}
     }
 
     &-form {
@@ -26,6 +28,7 @@
         align-items: center;
         justify-content: center;
         padding: 4vh 4vw;
+        
 
         h3 {
 
@@ -43,14 +46,16 @@
 
         form {
             width: 80%;
+            height: fit-content;
             display: flex;
             flex-direction: column;
             align-self: center;
             gap: 2vw;
+            
 
             .opinion {
                 height: 10rem;
-               z-index: 100;
+                z-index: 100;
             }
 
             .opinion.placeholder {
@@ -79,15 +84,58 @@
             }
         }
     }
+
+    .card {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 33rem;
+
+        margin: 0 1rem;
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        border-radius: 0.5rem;
+
+    }
+
+    .star {
+        font-size: 5vh;
+        cursor: pointer;
+    }
+
+    .one {
+        color: rgb(255, 0, 0);
+    }
+
+    .two {
+        color: rgb(255, 106, 0);
+    }
+
+    .three {
+        color: rgb(251, 255, 120);
+    }
+
+    .four {
+        color: rgb(255, 255, 0);
+    }
+
+    .five {
+        color: rgb(24, 159, 14);
+    }
 }
+
 @media screen and (max-width: 700px) {
-.rating{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50% 50%;
-    height: 100VH;
-}
-.rating-content{
-    border: black solid 2px;
-}
+    .rating {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        height: 100VH;
+    }
+
+    .rating-content {
+        border: black solid 2px;
+    }
 }

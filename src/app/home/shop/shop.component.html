@@ -4,7 +4,10 @@
     <p class="p-header">best items recomendet by our team</p>
 
     <div class="shop-container_products">
-      <div *ngFor="let product of shop" class="card">
+      
+      <div *ngFor="let product of shop$ | async" class="card2">
+      <div  class="card">
+      
         <div class="card-img">
           <img src="{{product.img}}" alt="" class="img">
         </div>
@@ -13,9 +16,9 @@
           <p>{{product.price | currency}}</p>
         </div>
         <div class="card-buttons">
-          <button (click)="showDetails(product.id)" href="">details</button>
-          <button (click)="buy(product)" href="">buy</button>
-          
+          <button (click)="showDetails(product)" href="">details</button>
+          <button (click)="buy(product)" class="buy" href="">buy</button>
+        </div>
         </div>
       </div>
     </div>

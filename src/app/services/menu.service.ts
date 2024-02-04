@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CoffeeMenu } from './CoffeMenu';
+import { Observable } from 'rxjs';
+import { MenuResponse } from './Menu-response';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -107,13 +110,41 @@ export class MenuService {
       article: 'Unleash your taste buds delight with our Cortado, an artful composition that marries the boldness of espresso with the luscious creaminess of equal parts steamed milk. Carefully prepared by our talented baristas, this captivating creation offers a balanced and nuanced coffee experience. The result is a sensory symphony that showcases the true artistry of coffee, allowing you to savor the rich complexities of the beans in every delightful sip. Immerse yourself in the elegant simplicity of our Cortado, a true work of coffee craftsmanship that embodies the soul of coffee perfection.'
     },
   ]
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
   getMenu() {
     return this.menu
   }
+
+
+
+  getProducts(): Observable<Array<MenuResponse>> {
+    return this.http.get<Array<MenuResponse>>('/api/menu')
+  }
+
+  addProduct(value: MenuItem): Observable<MenuResponse> {
+    return this.http.post<MenuResponse>('/api/menu', value)
+  }
+
+  deleteProduct(id):Observable<MenuResponse>{
+    return this.http.delete<MenuResponse>(`/api/menu/${id}`)
+  }
+
+  editProduct(id:number, value:MenuItem){
+    return this.http.patch<MenuResponse>(`/api/menu/${id}`, value)
+  }
 }
 
 
 
+export interface MenuItem {
+ 
+  img1: string,
+  img2: string,
+  img3: string,
+  title:string,
+  price:number,
+  label:string,
+  article:string,
+}

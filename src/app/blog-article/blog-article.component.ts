@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
-import { BlogArticle } from '../services/blog-article';
+import { BlogArticleResponse } from '../services/blog-article';
 import { BlogService } from '../services/blog.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { BlogService } from '../services/blog.service';
 })
 export class BlogArticleComponent implements OnInit {
 articleId:string
-article:Array<BlogArticle>
+article:Array<BlogArticleResponse>
   constructor(private route:ActivatedRoute,
   private blogService:BlogService) { }
 

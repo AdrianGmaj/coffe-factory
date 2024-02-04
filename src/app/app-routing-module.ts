@@ -6,6 +6,7 @@ import { BlogArticleComponent } from './blog-article/blog-article.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminPageComponent } from './admin/admin-page/admin-page.component';
 import { LogInComponent } from './log-in/log-in/log-in.component';
+import { AdminGuardService } from './services/admin-guard.service';
 
 
 
@@ -24,14 +25,15 @@ const routes: Routes = [
     path: 'about-us',
     component: AboutUsComponent
   },
-  {
-    path: 'admin',
-    component: AdminPageComponent
-  },
+
   {
     path: 'log-in',
     component: LogInComponent
-  }
+  },
+  {
+    path: 'admin',
+    component: AdminPageComponent,canActivate: [AdminGuardService],
+  },
 
 ];
 
@@ -39,7 +41,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
-
+    enableTracing: true
   })],
   exports: [RouterModule]
 })
