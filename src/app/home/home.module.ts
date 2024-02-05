@@ -17,6 +17,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { DialogComponent } from './shop/dialog/dialog.component';
 import { DialogNavComponent } from '../toolbar/dialog-nav/dialog-nav.component';
 import { ShopCardComponent } from './shop/shop-card/shop-card.component';
+import { EnjoyComponent } from './enjoy/enjoy.component';
 
 
 
@@ -33,7 +34,8 @@ import { ShopCardComponent } from './shop/shop-card/shop-card.component';
     ShopComponent,
     DialogComponent,
     DialogNavComponent,
-    ShopCardComponent
+    ShopCardComponent,
+    EnjoyComponent
   ],
   imports: [
     CommonModule,
