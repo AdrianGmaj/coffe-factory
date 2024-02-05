@@ -10,7 +10,7 @@
     </div>
 
     <ul>
-      <li *ngFor="let coffee of filteredData">
+      <li *ngFor="let coffee of filteredData$ | async">
         <div class="coffee-card" (click)="choose(coffee.id)">
           <img class="coffee-img" src="{{coffee.img1}}" alt="">
           <b class="coffee-title">{{coffee.title}}</b>

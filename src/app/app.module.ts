@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 import { AdminModule } from './admin/admin.module';
 import { LogInModule } from './log-in/log-in.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BasketSideComponent } from './toolbar/basket-side/basket-side.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewsletterComponent,
     AboutUsComponent,
     DialogSearchComponent,
+    BasketSideComponent
 
   ],
   imports: [

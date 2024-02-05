@@ -13,5 +13,6 @@ export class NewsletterComponent implements OnInit {
   }
 subscribe(){
   alert('thanks for subscribe')
+  
 }
 }

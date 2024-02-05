@@ -29,7 +29,9 @@
         align-items: center;
         justify-self: center;
         padding: 4vh 4vw;
-
+        mat-form-field{
+            width: 60vw;
+        }
         form {
             display: flex;
             flex-direction: column;

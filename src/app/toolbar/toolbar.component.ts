@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { BasketService } from '../services/basket.service';
-import { Product } from '../services/product';
 import { BasketItem } from '../services/basket-item';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 import { MenuService } from '../services/menu.service';
-import { CoffeeMenu } from '../services/CoffeMenu';
 import { DialogNavComponent } from './dialog-nav/dialog-nav.component';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { MenuResponse } from '../services/Menu-response';
 
 @Component({
   selector: 'app-toolbar',
@@ -17,9 +16,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  basket: Array<BasketItem> = [];
-  coffeeMenu: Array<CoffeeMenu> = []
-  buyBasket = false;
+
+  coffeeMenu$: Observable<Array<MenuResponse>> 
+  basketOpened = false;
+  sideOpened = false;
+  basket: Array<BasketItem>
 
 
   constructor(private router: Router,
@@ -27,32 +28,12 @@ export class ToolbarComponent implements OnInit {
     private dialog: MatDialog,
     private menu: MenuService) { }
 
-  basketOpened = false;
-  sideOpened = false;
 
-  buyForm = new FormGroup({
-    nameAndSurname: new FormControl('',
-      [Validators.required]),
-    phone: new FormControl('',
-      [Validators.required,]
-    ),
-    address: new FormControl('',
-      [Validators.required]),
-    cardNumber: new FormControl('',
-      [Validators.required]),
-    month: new FormControl('',
-      [Validators.required, Validators.minLength(7)]),
 
-    year: new FormControl('',
-      [Validators.required]),
-    cvv: new FormControl('',
-      [Validators.required])
-  })
 
   ngOnInit() {
-    this.basket = this.basketService.getBasket()
-    this.coffeeMenu = this.menu.getMenu()
-
+    this.basket = this.basketService.getBasket();
+    this.coffeeMenu$ = this.menu.getProducts()
   }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -76,47 +57,25 @@ export class ToolbarComponent implements OnInit {
       .reduce((prev, current) => prev + current, 0)
   }
 
-  removeCount(item: BasketItem): void {
-    if (item.count > 1) {
-      item.count -= 1;
-    }
-  }
 
-  addCount(item: BasketItem): void {
-    item.count += 1;
-
-  }
 
 
   showSearch() {
     this.dialog.open(DialogSearchComponent, {
-      data: this.coffeeMenu,
+      data: this.coffeeMenu$,
 
     })
   }
   showSide() {
     this.dialog.open(DialogNavComponent, {
-      data: this.coffeeMenu,
+      data: this.coffeeMenu$,
       position: { top: '0px', left: '0px' }
     })
   }
 
-  basketTotal() {
-    return this.basket
-      .map(item => item.product.price * item.count)
-      .reduce((prev, current) => prev + current, 0)
-  }
+closeBasket(){
+  this.basketOpened = false
+}
 
-  openBuy() {
-    this.buyBasket = true
-  }
 
-  buyFormSubmit(formValue) {
-
-    this.basket.length = 0;
-    this.basketOpened = false;
-    this.buyBasket = false
-    alert('thank you!')
-    formValue = ''
-  }
 }

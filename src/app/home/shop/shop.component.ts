@@ -36,33 +36,7 @@ export class ShopComponent implements OnInit {
   }
 
 
-  /**
-    
-      showDetails(id) {
-        this.shopService.getProductById(id)
-          .subscribe((product) => {
-            console.log(product)
-            this.dialog.open(DialogComponent, {
-              data: product
-            });
-          })
-      }
-  */
 
-  /** 
-    showDetails(id) {
-      this.shopService.getProducts()
-        .pipe(
-          map((products) => products.find(product => product.id === id))
-        )
-        .subscribe((product) => {
-          console.log(product)
-          this.dialog.open(DialogComponent, {
-            data: product
-          });
-        })
-    }
-  **/
 
   buy(product) {
     this.basketService.addToBasket(product)

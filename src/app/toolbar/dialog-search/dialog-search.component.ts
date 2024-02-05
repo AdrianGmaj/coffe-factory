@@ -2,7 +2,9 @@ import { Dialog } from '@angular/cdk/dialog';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { CoffeeMenu } from 'src/app/services/CoffeMenu';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-dialog-search',
@@ -12,16 +14,18 @@ import { CoffeeMenu } from 'src/app/services/CoffeMenu';
 export class DialogSearchComponent implements OnInit {
   inputValue: string
 
-  filteredData: Array<CoffeeMenu>
-  constructor(private dialogRef: MatDialogRef<DialogSearchComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Array<CoffeeMenu>,
+  filteredData$: Observable<Array<CoffeeMenu>>
+  constructor(private menuService: MenuService,
     private router: Router,
-    private dialog: MatDialog,) { }
+    private dialog: MatDialog) { }
 
   ngOnInit() {
   }
   showCoffee() {
-    this.filteredData = this.data.filter((coffee) => coffee.title.toLowerCase().includes(this.inputValue.toLowerCase()))
+    this.filteredData$ = this.menuService.getProducts().pipe(
+      map((products) => products.filter((coffee) => coffee.title.toLowerCase().includes(this.inputValue.toLowerCase())))
+    )
+
   }
   choose(id) {
     this.router.navigateByUrl(`/menu-coffee/${id}`)
