@@ -113,6 +113,10 @@
         cursor: pointer;
 
     }
+    .mat-badge-content {
+        background:  #006a4e;
+        color: white;
+    }
 }
 
 .basket {
@@ -122,6 +126,7 @@
     z-index: -99;
     transition: transform 1s ease-in-out;
     margin-top: 57.21px;
+
 
     position: fixed;
     height: 100vh;

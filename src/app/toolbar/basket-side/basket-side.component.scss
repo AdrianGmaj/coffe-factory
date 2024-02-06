@@ -6,25 +6,26 @@
 
     &-content {
 
-        
+        i {
+            position: absolute;
+            right: 0;
+            padding: 3vh 3vw;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         h3 {
             text-align: center;
+        }
+        h2 {
+            text-transform: uppercase;
+            padding: 3vh 3vw;
         }
         &.active {
             transform: translateX(0);
 
-            i {
-                position: absolute;
-                right: 0;
-                padding: 3vh 3vw;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
+          
 
-            h2 {
-                text-transform: uppercase;
-                padding: 3vh 3vw;
-            }
+         
         }
 
         .products {
@@ -32,22 +33,22 @@
             flex-direction: column;
             justify-content: center;
             padding: 2vh 2vw;
-            gap: 2vw;
+            gap: 4vw;
 
             &-card {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                height: 0.7rem;
-                font-size: 1rem;
+                height: 0.5rem;
+                font-size: 0.8rem;
                 padding: 1rem 1rem;
-                border-bottom: 1px solid black;
+                border-bottom: 1px dotted black;
 
 
                 img {
                     height: 2rem;
-                    width: 2rem;
+                    width: 3rem;
                     object-fit: cover;
                 }
 
@@ -201,6 +202,10 @@ form {
 
 @media screen and (min-width: 780px) {
 
+
+    button{
+        width: 4rem;
+    }
 
     .hamburger {
         display: none;

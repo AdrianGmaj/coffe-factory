@@ -1,0 +1,47 @@
+.card {
+    height: 22rem;
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    &-img .img {
+
+     
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+
+
+    }
+    &-text{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 1vh;
+        h4{ font-family: 'Asul', serif;
+            font-size: 1rem;
+            padding-top:2vh;
+
+        }
+        p{
+            font-size: 0.8rem;
+        }
+    }
+    a{
+        margin: 1rem;
+        text-decoration: none;
+        background-color: #be9c79;
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 1rem;
+
+        color: white;
+        width: 100%;
+        align-self: center;
+    }
+    }

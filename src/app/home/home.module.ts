@@ -18,6 +18,7 @@ import { DialogComponent } from './shop/dialog/dialog.component';
 import { DialogNavComponent } from '../toolbar/dialog-nav/dialog-nav.component';
 import { ShopCardComponent } from './shop/shop-card/shop-card.component';
 import { EnjoyComponent } from './enjoy/enjoy.component';
+import { ArticleCardComponent } from './blog/article-card/article-card.component';
 
 
 
@@ -35,7 +36,8 @@ import { EnjoyComponent } from './enjoy/enjoy.component';
     DialogComponent,
     DialogNavComponent,
     ShopCardComponent,
-    EnjoyComponent
+    EnjoyComponent,
+    ArticleCardComponent
   ],
   imports: [
     CommonModule,
