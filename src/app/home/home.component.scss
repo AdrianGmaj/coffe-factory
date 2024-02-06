@@ -59,6 +59,12 @@
     min-height: min-content;
 
   }
+
+  app-opening-hours{
+    grid-column: container-start/container-end;
+    width: 100%;
+    min-height: min-content;
+  }
   
 .hidden {
   opacity: 0;

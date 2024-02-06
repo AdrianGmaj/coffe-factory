@@ -19,6 +19,7 @@ import { DialogNavComponent } from '../toolbar/dialog-nav/dialog-nav.component';
 import { ShopCardComponent } from './shop/shop-card/shop-card.component';
 import { EnjoyComponent } from './enjoy/enjoy.component';
 import { ArticleCardComponent } from './blog/article-card/article-card.component';
+import { OpeningHoursComponent } from './opening-hours/opening-hours.component';
 
 
 
@@ -37,7 +38,8 @@ import { ArticleCardComponent } from './blog/article-card/article-card.component
     DialogNavComponent,
     ShopCardComponent,
     EnjoyComponent,
-    ArticleCardComponent
+    ArticleCardComponent,
+    OpeningHoursComponent
   ],
   imports: [
     CommonModule,
