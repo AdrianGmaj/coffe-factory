@@ -37,7 +37,7 @@ overflow: hidden;
             text-align: center;
             text-transform: uppercase;
             font-weight: 800;
-            font-size: calc(1rem + 1.5vw);
+            font-size: calc(1rem + 1vw);
         }
 
         p {
@@ -51,12 +51,12 @@ overflow: hidden;
             display: flex;
             flex-direction: column;
             align-self: center;
-            gap: 2vw;
+            gap: 1vw;
             
 
             .opinion {
-                height: 10rem;
-                z-index: 100;
+                height: 6rem;
+              
             }
 
             .opinion.placeholder {

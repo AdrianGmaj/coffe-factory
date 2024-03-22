@@ -41,11 +41,13 @@
     min-height: min-content;
 
   }
-  app-enjoy{
+
+  app-enjoy {
     grid-column: container-start/container-end;
     width: 100%;
     min-height: min-content;
   }
+
   app-shop {
     grid-column: container-start/container-end;
     width: 100%;
@@ -60,21 +62,21 @@
 
   }
 
-  app-opening-hours{
+  app-opening-hours {
     grid-column: container-start/container-end;
     width: 100%;
     min-height: min-content;
   }
-  
-.hidden {
-  opacity: 0;
-  transition:all 1s ease-in-out;
 
-}
+  .hidden {
+    opacity: 0;
+    transition: all 1s ease-in-out;
 
-.show {
-  opacity: 1;
-  transition: all 1s ease-in-out;
+  }
 
-}
+  .show {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+
+  }
 }
